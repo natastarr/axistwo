@@ -47,12 +47,9 @@
             margin: 0 5px;
         }
 
-        input[type="number"], input[type="text"], input[type="email"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
         }
 
         label {
@@ -73,6 +70,55 @@
 
         button:hover {
             background-color: #2980b9;
+        }
+
+        .results {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e8f4fc;
+            border-radius: 5px;
+        }
+
+        .result-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .pain-drawing {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .pain-drawing img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .table-container {
+            overflow-x: auto;
         }
 
         .hidden {
@@ -104,6 +150,12 @@
             flex: 1;
         }
 
+        .interpretation {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 5px;
+        }
+
         .scale-labels {
             display: flex;
             justify-content: space-between;
@@ -128,75 +180,12 @@
             font-size: 0.9em;
             margin-top: 5px;
         }
-
-        .thank-you {
-            text-align: center;
-            padding: 40px;
-            background-color: #e8f4fc;
-            border-radius: 5px;
-            margin-top: 30px;
-            display: none;
-        }
-
-        .patient-info {
-            margin-bottom: 30px;
-        }
-
-        .required {
-            color: red;
-        }
-
-        .form-row {
-            margin-bottom: 15px;
-        }
-
-        .table-container {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
     </style>
 </head>
 <body>
     <h1>Анкета DC/TMD: Ось II</h1>
     
     <form id="tmdForm">
-        <div class="section patient-info">
-            <h2>Информация о пациенте</h2>
-            <div class="form-row">
-                <label for="patientLastName">Фамилия: <span class="required">*</span></label>
-                <input type="text" id="patientLastName" name="patientLastName" required>
-            </div>
-            <div class="form-row">
-                <label for="patientFirstName">Имя: <span class="required">*</span></label>
-                <input type="text" id="patientFirstName" name="patientFirstName" required>
-            </div>
-            <div class="form-row">
-                <label for="patientMiddleName">Отчество:</label>
-                <input type="text" id="patientMiddleName" name="patientMiddleName">
-            </div>
-            <div class="form-row">
-                <label for="doctorEmail">Email врача: <span class="required">*</span></label>
-                <input type="email" id="doctorEmail" name="doctorEmail" required>
-            </div>
-        </div>
         
         <div id="section1" class="section">
             <h2>1. Рисунок боли</h2>
@@ -711,8 +700,700 @@
         </div>
 
         
+        <div id="section4" class="section">
+            <h2>4. Шкала ограничения функции нижней челюсти (JFLS-20)</h2>
+            <p><strong>Инструкция</strong>: Для каждого пункта ниже укажите степень ограничения за последний месяц. Если Вы полностью избегали занятия из-за его сложности, обведите 10. Если Вы избегали занятия по причинам, не связанным с болью или трудностями, оставьте пункт пустым.</p>
+            
+            <div class="question">
+                <p>1. Пережевывание жесткой пищи</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_1_0" name="jfls20_1" value="0">
+                    <input type="radio" id="jfls20_1_1" name="jfls20_1" value="1">
+                    <input type="radio" id="jfls20_1_2" name="jfls20_1" value="2">
+                    <input type="radio" id="jfls20_1_3" name="jfls20_1" value="3">
+                    <input type="radio" id="jfls20_1_4" name="jfls20_1" value="4">
+                    <input type="radio" id="jfls20_1_5" name="jfls20_1" value="5">
+                    <input type="radio" id="jfls20_1_6" name="jfls20_1" value="6">
+                    <input type="radio" id="jfls20_1_7" name="jfls20_1" value="7">
+                    <input type="radio" id="jfls20_1_8" name="jfls20_1" value="8">
+                    <input type="radio" id="jfls20_1_9" name="jfls20_1" value="9">
+                    <input type="radio" id="jfls20_1_10" name="jfls20_1" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>2. Жевание твердого хлеба</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_2_0" name="jfls20_2" value="0">
+                    <input type="radio" id="jfls20_2_1" name="jfls20_2" value="1">
+                    <input type="radio" id="jfls20_2_2" name="jfls20_2" value="2">
+                    <input type="radio" id="jfls20_2_3" name="jfls20_2" value="3">
+                    <input type="radio" id="jfls20_2_4" name="jfls20_2" value="4">
+                    <input type="radio" id="jfls20_2_5" name="jfls20_2" value="5">
+                    <input type="radio" id="jfls20_2_6" name="jfls20_2" value="6">
+                    <input type="radio" id="jfls20_2_7" name="jfls20_2" value="7">
+                    <input type="radio" id="jfls20_2_8" name="jfls20_2" value="8">
+                    <input type="radio" id="jfls20_2_9" name="jfls20_2" value="9">
+                    <input type="radio" id="jfls20_2_10" name="jfls20_2" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>3. Жевание курицы (например, приготовленной в духовке)</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_3_0" name="jfls20_3" value="0">
+                    <input type="radio" id="jfls20_3_1" name="jfls20_3" value="1">
+                    <input type="radio" id="jfls20_3_2" name="jfls20_3" value="2">
+                    <input type="radio" id="jfls20_3_3" name="jfls20_3" value="3">
+                    <input type="radio" id="jfls20_3_4" name="jfls20_3" value="4">
+                    <input type="radio" id="jfls20_3_5" name="jfls20_3" value="5">
+                    <input type="radio" id="jfls20_3_6" name="jfls20_3" value="6">
+                    <input type="radio" id="jfls20_3_7" name="jfls20_3" value="7">
+                    <input type="radio" id="jfls20_3_8" name="jfls20_3" value="8">
+                    <input type="radio" id="jfls20_3_9" name="jfls20_3" value="9">
+                    <input type="radio" id="jfls20_3_10" name="jfls20_3" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            
+            <div class="question">
+                <p>4. Жевание крекеров</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_4_0" name="jfls20_4" value="0">
+                    <input type="radio" id="jfls20_4_1" name="jfls20_4" value="1">
+                    <input type="radio" id="jfls20_4_2" name="jfls20_4" value="2">
+                    <input type="radio" id="jfls20_4_3" name="jfls20_4" value="3">
+                    <input type="radio" id="jfls20_4_4" name="jfls20_4" value="4">
+                    <input type="radio" id="jfls20_4_5" name="jfls20_4" value="5">
+                    <input type="radio" id="jfls20_4_6" name="jfls20_4" value="6">
+                    <input type="radio" id="jfls20_4_7" name="jfls20_4" value="7">
+                    <input type="radio" id="jfls20_4_8" name="jfls20_4" value="8">
+                    <input type="radio" id="jfls20_4_9" name="jfls20_4" value="9">
+                    <input type="radio" id="jfls20_4_10" name="jfls20_4" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>5. Жевание мягкой пищи (например, макароны, мягкие или консервированные фрукты, вареные овощи, рыба)</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_5_0" name="jfls20_5" value="0">
+                    <input type="radio" id="jfls20_5_1" name="jfls20_5" value="1">
+                    <input type="radio" id="jfls20_5_2" name="jfls20_5" value="2">
+                    <input type="radio" id="jfls20_5_3" name="jfls20_5" value="3">
+                    <input type="radio" id="jfls20_5_4" name="jfls20_5" value="4">
+                    <input type="radio" id="jfls20_5_5" name="jfls20_5" value="5">
+                    <input type="radio" id="jfls20_5_6" name="jfls20_5" value="6">
+                    <input type="radio" id="jfls20_5_7" name="jfls20_5" value="7">
+                    <input type="radio" id="jfls20_5_8" name="jfls20_5" value="8">
+                    <input type="radio" id="jfls20_5_9" name="jfls20_5" value="9">
+                    <input type="radio" id="jfls20_5_10" name="jfls20_5" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            
+            
+            
+            <div class="question">
+                <p>6. Употребление мягкой пищи, не требующей пережевывания (например, картофельного пюре, джемов, соусов, пудингов, смузи)</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_6_0" name="jfls20_6" value="0">
+                    <input type="radio" id="jfls20_6_1" name="jfls20_6" value="1">
+                    <input type="radio" id="jfls20_6_2" name="jfls20_6" value="2">
+                    <input type="radio" id="jfls20_6_3" name="jfls20_6" value="3">
+                    <input type="radio" id="jfls20_6_4" name="jfls20_6" value="4">
+                    <input type="radio" id="jfls20_6_5" name="jfls20_6" value="5">
+                    <input type="radio" id="jfls20_6_6" name="jfls20_6" value="6">
+                    <input type="radio" id="jfls20_6_7" name="jfls20_6" value="7">
+                    <input type="radio" id="jfls20_6_8" name="jfls20_6" value="8">
+                    <input type="radio" id="jfls20_6_9" name="jfls20_6" value="9">
+                    <input type="radio" id="jfls20_6_10" name="jfls20_6" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>7. Откройте достаточно широко, чтобы откусить целое яблоко</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_7_0" name="jfls20_7" value="0">
+                    <input type="radio" id="jfls20_7_1" name="jfls20_7" value="1">
+                    <input type="radio" id="jfls20_7_2" name="jfls20_7" value="2">
+                    <input type="radio" id="jfls20_7_3" name="jfls20_7" value="3">
+                    <input type="radio" id="jfls20_7_4" name="jfls20_7" value="4">
+                    <input type="radio" id="jfls20_7_5" name="jfls20_7" value="5">
+                    <input type="radio" id="jfls20_7_6" name="jfls20_7" value="6">
+                    <input type="radio" id="jfls20_7_7" name="jfls20_7" value="7">
+                    <input type="radio" id="jfls20_7_8" name="jfls20_7" value="8">
+                    <input type="radio" id="jfls20_7_9" name="jfls20_7" value="9">
+                    <input type="radio" id="jfls20_7_10" name="jfls20_7" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            
+            <div class="question">
+                <p>8. Откройте достаточно широко, чтобы откусить кусочек сэндвича</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_8_0" name="jfls20_8" value="0">
+                    <input type="radio" id="jfls20_8_1" name="jfls20_8" value="1">
+                    <input type="radio" id="jfls20_8_2" name="jfls20_8" value="2">
+                    <input type="radio" id="jfls20_8_3" name="jfls20_8" value="3">
+                    <input type="radio" id="jfls20_8_4" name="jfls20_8" value="4">
+                    <input type="radio" id="jfls20_8_5" name="jfls20_8" value="5">
+                    <input type="radio" id="jfls20_8_6" name="jfls20_8" value="6">
+                    <input type="radio" id="jfls20_8_7" name="jfls20_8" value="7">
+                    <input type="radio" id="jfls20_8_8" name="jfls20_8" value="8">
+                    <input type="radio" id="jfls20_8_9" name="jfls20_8" value="9">
+                    <input type="radio" id="jfls20_8_10" name="jfls20_8" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>9. Откройте достаточно широко для разговора</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_9_0" name="jfls20_9" value="0">
+                    <input type="radio" id="jfls20_9_1" name="jfls20_9" value="1">
+                    <input type="radio" id="jfls20_9_2" name="jfls20_9" value="2">
+                    <input type="radio" id="jfls20_9_3" name="jfls20_9" value="3">
+                    <input type="radio" id="jfls20_9_4" name="jfls20_9" value="4">
+                    <input type="radio" id="jfls20_9_5" name="jfls20_9" value="5">
+                    <input type="radio" id="jfls20_9_6" name="jfls20_9" value="6">
+                    <input type="radio" id="jfls20_9_7" name="jfls20_9" value="7">
+                    <input type="radio" id="jfls20_9_8" name="jfls20_9" value="8">
+                    <input type="radio" id="jfls20_9_9" name="jfls20_9" value="9">
+                    <input type="radio" id="jfls20_9_10" name="jfls20_9" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>10. Откройте рот достаточно широко, чтобы пить из чашки</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_10_0" name="jfls20_10" value="0">
+                    <input type="radio" id="jfls20_10_1" name="jfls20_10" value="1">
+                    <input type="radio" id="jfls20_10_2" name="jfls20_10" value="2">
+                    <input type="radio" id="jfls20_10_3" name="jfls20_10" value="3">
+                    <input type="radio" id="jfls20_10_4" name="jfls20_10" value="4">
+                    <input type="radio" id="jfls20_10_5" name="jfls20_10" value="5">
+                    <input type="radio" id="jfls20_10_6" name="jfls20_10" value="6">
+                    <input type="radio" id="jfls20_10_7" name="jfls20_10" value="7">
+                    <input type="radio" id="jfls20_10_8" name="jfls20_10" value="8">
+                    <input type="radio" id="jfls20_10_9" name="jfls20_10" value="9">
+                    <input type="radio" id="jfls20_10_10" name="jfls20_10" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            
+            <div class="question">
+                <p>11. Глотать</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_11_0" name="jfls20_11" value="0">
+                    <input type="radio" id="jfls20_11_1" name="jfls20_11" value="1">
+                    <input type="radio" id="jfls20_11_2" name="jfls20_11" value="2">
+                    <input type="radio" id="jfls20_11_3" name="jfls20_11" value="3">
+                    <input type="radio" id="jfls20_11_4" name="jfls20_11" value="4">
+                    <input type="radio" id="jfls20_11_5" name="jfls20_11" value="5">
+                    <input type="radio" id="jfls20_11_6" name="jfls20_11" value="6">
+                    <input type="radio" id="jfls20_11_7" name="jfls20_11" value="7">
+                    <input type="radio" id="jfls20_11_8" name="jfls20_11" value="8">
+                    <input type="radio" id="jfls20_11_9" name="jfls20_11" value="9">
+                    <input type="radio" id="jfls20_11_10" name="jfls20_11" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>12. Зевать</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_12_0" name="jfls20_12" value="0">
+                    <input type="radio" id="jfls20_12_1" name="jfls20_12" value="1">
+                    <input type="radio" id="jfls20_12_2" name="jfls20_12" value="2">
+                    <input type="radio" id="jfls20_12_3" name="jfls20_12" value="3">
+                    <input type="radio" id="jfls20_12_4" name="jfls20_12" value="4">
+                    <input type="radio" id="jfls20_12_5" name="jfls20_12" value="5">
+                    <input type="radio" id="jfls20_12_6" name="jfls20_12" value="6">
+                    <input type="radio" id="jfls20_12_7" name="jfls20_12" value="7">
+                    <input type="radio" id="jfls20_12_8" name="jfls20_12" value="8">
+                    <input type="radio" id="jfls20_12_9" name="jfls20_12" value="9">
+                    <input type="radio" id="jfls20_12_10" name="jfls20_12" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>13. Говорить</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_13_0" name="jfls20_13" value="0">
+                    <input type="radio" id="jfls20_13_1" name="jfls20_13" value="1">
+                    <input type="radio" id="jfls20_13_2" name="jfls20_13" value="2">
+                    <input type="radio" id="jfls20_13_3" name="jfls20_13" value="3">
+                    <input type="radio" id="jfls20_13_4" name="jfls20_13" value="4">
+                    <input type="radio" id="jfls20_13_5" name="jfls20_13" value="5">
+                    <input type="radio" id="jfls20_13_6" name="jfls20_13" value="6">
+                    <input type="radio" id="jfls20_13_7" name="jfls20_13" value="7">
+                    <input type="radio" id="jfls20_13_8" name="jfls20_13" value="8">
+                    <input type="radio" id="jfls20_13_9" name="jfls20_13" value="9">
+                    <input type="radio" id="jfls20_13_10" name="jfls20_13" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>14. Петь</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_14_0" name="jfls20_14" value="0">
+                    <input type="radio" id="jfls20_14_1" name="jfls20_14" value="1">
+                    <input type="radio" id="jfls20_14_2" name="jfls20_14" value="2">
+                    <input type="radio" id="jfls20_14_3" name="jfls20_14" value="3">
+                    <input type="radio" id="jfls20_14_4" name="jfls20_14" value="4">
+                    <input type="radio" id="jfls20_14_5" name="jfls20_14" value="5">
+                    <input type="radio" id="jfls20_14_6" name="jfls20_14" value="6">
+                    <input type="radio" id="jfls20_14_7" name="jfls20_14" value="7">
+                    <input type="radio" id="jfls20_14_8" name="jfls20_14" value="8">
+                    <input type="radio" id="jfls20_14_9" name="jfls20_14" value="9">
+                    <input type="radio" id="jfls20_14_10" name="jfls20_14" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>15. Сделать счастливое лицо</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_15_0" name="jfls20_15" value="0">
+                    <input type="radio" id="jfls20_15_1" name="jfls20_15" value="1">
+                    <input type="radio" id="jfls20_15_2" name="jfls20_15" value="2">
+                    <input type="radio" id="jfls20_15_3" name="jfls20_15" value="3">
+                    <input type="radio" id="jfls20_15_4" name="jfls20_15" value="4">
+                    <input type="radio" id="jfls20_15_5" name="jfls20_15" value="5">
+                    <input type="radio" id="jfls20_15_6" name="jfls20_15" value="6">
+                    <input type="radio" id="jfls20_15_7" name="jfls20_15" value="7">
+                    <input type="radio" id="jfls20_15_8" name="jfls20_15" value="8">
+                    <input type="radio" id="jfls20_15_9" name="jfls20_15" value="9">
+                    <input type="radio" id="jfls20_15_10" name="jfls20_15" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>16. Сделать сердитое лицо</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_16_0" name="jfls20_16" value="0">
+                    <input type="radio" id="jfls20_16_1" name="jfls20_16" value="1">
+                    <input type="radio" id="jfls20_16_2" name="jfls20_16" value="2">
+                    <input type="radio" id="jfls20_16_3" name="jfls20_16" value="3">
+                    <input type="radio" id="jfls20_16_4" name="jfls20_16" value="4">
+                    <input type="radio" id="jfls20_16_5" name="jfls20_16" value="5">
+                    <input type="radio" id="jfls20_16_6" name="jfls20_16" value="6">
+                    <input type="radio" id="jfls20_16_7" name="jfls20_16" value="7">
+                    <input type="radio" id="jfls20_16_8" name="jfls20_16" value="8">
+                    <input type="radio" id="jfls20_16_9" name="jfls20_16" value="9">
+                    <input type="radio" id="jfls20_16_10" name="jfls20_16" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>17. Нахмурить брови</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_17_0" name="jfls20_17" value="0">
+                    <input type="radio" id="jfls20_17_1" name="jfls20_17" value="1">
+                    <input type="radio" id="jfls20_17_2" name="jfls20_17" value="2">
+                    <input type="radio" id="jfls20_17_3" name="jfls20_17" value="3">
+                    <input type="radio" id="jfls20_17_4" name="jfls20_17" value="4">
+                    <input type="radio" id="jfls20_17_5" name="jfls20_17" value="5">
+                    <input type="radio" id="jfls20_17_6" name="jfls20_17" value="6">
+                    <input type="radio" id="jfls20_17_7" name="jfls20_17" value="7">
+                    <input type="radio" id="jfls20_17_8" name="jfls20_17" value="8">
+                    <input type="radio" id="jfls20_17_9" name="jfls20_17" value="9">
+                    <input type="radio" id="jfls20_17_10" name="jfls20_17" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>18. Целовать</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_18_0" name="jfls20_18" value="0">
+                    <input type="radio" id="jfls20_18_1" name="jfls20_18" value="1">
+                    <input type="radio" id="jfls20_18_2" name="jfls20_18" value="2">
+                    <input type="radio" id="jfls20_18_3" name="jfls20_18" value="3">
+                    <input type="radio" id="jfls20_18_4" name="jfls20_18" value="4">
+                    <input type="radio" id="jfls20_18_5" name="jfls20_18" value="5">
+                    <input type="radio" id="jfls20_18_6" name="jfls20_18" value="6">
+                    <input type="radio" id="jfls20_18_7" name="jfls20_18" value="7">
+                    <input type="radio" id="jfls20_18_8" name="jfls20_18" value="8">
+                    <input type="radio" id="jfls20_18_9" name="jfls20_18" value="9">
+                    <input type="radio" id="jfls20_18_10" name="jfls20_18" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>19. Улыбаться</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_19_0" name="jfls20_19" value="0">
+                    <input type="radio" id="jfls20_19_1" name="jfls20_19" value="1">
+                    <input type="radio" id="jfls20_19_2" name="jfls20_19" value="2">
+                    <input type="radio" id="jfls20_19_3" name="jfls20_19" value="3">
+                    <input type="radio" id="jfls20_19_4" name="jfls20_19" value="4">
+                    <input type="radio" id="jfls20_19_5" name="jfls20_19" value="5">
+                    <input type="radio" id="jfls20_19_6" name="jfls20_19" value="6">
+                    <input type="radio" id="jfls20_19_7" name="jfls20_19" value="7">
+                    <input type="radio" id="jfls20_19_8" name="jfls20_19" value="8">
+                    <input type="radio" id="jfls20_19_9" name="jfls20_19" value="9">
+                    <input type="radio" id="jfls20_19_10" name="jfls20_19" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>20. Смеяться</p>
+                <div class="scale-labels">
+                    <span>Никакого ограничения</span>
+                    <span>Серьезное ограничение</span>
+                </div>
+                <div class="scale">
+                    <input type="radio" id="jfls20_20_0" name="jfls20_20" value="0">
+                    <input type="radio" id="jfls20_20_1" name="jfls20_20" value="1">
+                    <input type="radio" id="jfls20_20_2" name="jfls20_20" value="2">
+                    <input type="radio" id="jfls20_20_3" name="jfls20_20" value="3">
+                    <input type="radio" id="jfls20_20_4" name="jfls20_20" value="4">
+                    <input type="radio" id="jfls20_20_5" name="jfls20_20" value="5">
+                    <input type="radio" id="jfls20_20_6" name="jfls20_20" value="6">
+                    <input type="radio" id="jfls20_20_7" name="jfls20_20" value="7">
+                    <input type="radio" id="jfls20_20_8" name="jfls20_20" value="8">
+                    <input type="radio" id="jfls20_20_9" name="jfls20_20" value="9">
+                    <input type="radio" id="jfls20_20_10" name="jfls20_20" value="10">
+                </div>
+                <div class="scale">
+                    <div class="scale-item">0</div>
+                    <div class="scale-item">1</div>
+                    <div class="scale-item">2</div>
+                    <div class="scale-item">3</div>
+                    <div class="scale-item">4</div>
+                    <div class="scale-item">5</div>
+                    <div class="scale-item">6</div>
+                    <div class="scale-item">7</div>
+                    <div class="scale-item">8</div>
+                    <div class="scale-item">9</div>
+                    <div class="scale-item">10</div>
+                </div>
+            </div>
+        </div>
+
+        
         <div id="section5" class="section">
-            <h2>4. Анкета здоровья пациента (PHQ-4)</h2>
+            <h2>5. Анкета здоровья пациента (PHQ-4)</h2>
             <p><strong>Инструкция</strong>: Как часто за последние 2 недели Вас беспокоили следующие проблемы? Пожалуйста, отметьте галочкой вариант ответа.</p>
             
             <div class="table-container">
@@ -780,7 +1461,110 @@
 
         
         <div id="section6" class="section">
-            <h2>5. ГАД-7 (Генерализованное тревожное расстройство)</h2>
+            <h2>6. Анкета здоровья пациента (PHQ-9)</h2>
+            <p><strong>Инструкция</strong>: Как часто за последние 2 недели Вас беспокоили следующие проблемы? Пожалуйста, отметьте галочкой вариант ответа.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Нисколько (0)</th>
+                            <th>Несколько дней (1)</th>
+                            <th>Более половины срока (2)</th>
+                            <th>Почти каждый день (3)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Мало интереса или энтузиазма в какой-либо деятельности</td>
+                            <td><input type="radio" name="phq9_1" value="0"></td>
+                            <td><input type="radio" name="phq9_1" value="1"></td>
+                            <td><input type="radio" name="phq9_1" value="2"></td>
+                            <td><input type="radio" name="phq9_1" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td>2. Чувство подавленности, депрессии или безнадежности</td>
+                            <td><input type="radio" name="phq9_2" value="0"></td>
+                            <td><input type="radio" name="phq9_2" value="1"></td>
+                            <td><input type="radio" name="phq9_2" value="2"></td>
+                            <td><input type="radio" name="phq9_2" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td>3. Проблемы с засыпанием или сном, или слишком много сна</td>
+                            <td><input type="radio" name="phq9_3" value="0"></td>
+                            <td><input type="radio" name="phq9_3" value="1"></td>
+                            <td><input type="radio" name="phq9_3" value="2"></td>
+                            <td><input type="radio" name="phq9_3" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td>4. Чувство усталости или упадок сил</td>
+                            <td><input type="radio" name="phq9_4" value="0"></td>
+                            <td><input type="radio" name="phq9_4" value="1"></td>
+                            <td><input type="radio" name="phq9_4" value="2"></td>
+                            <td><input type="radio" name="phq9_4" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td>5. Плохой аппетит или переедание</td>
+                            <td><input type="radio" name="phq9_5" value="0"></td>
+                            <td><input type="radio" name="phq9_5" value="1"></td>
+                            <td><input type="radio" name="phq9_5" value="2"></td>
+                            <td><input type="radio" name="phq9_5" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td>6. Иметь низкое мнение о себе, чувствовать, что вы неудачник или подвели себя или свою семью</td>
+                            <td><input type="radio" name="phq9_6" value="0"></td>
+                            <td><input type="radio" name="phq9_6" value="1"></td>
+                            <td><input type="radio" name="phq9_6" value="2"></td>
+                            <td><input type="radio" name="phq9_6" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td>7. Трудности с концентрацией внимания, например, при чтении газеты или просмотра телевизора</td>
+                            <td><input type="radio" name="phq9_7" value="0"></td>
+                            <td><input type="radio" name="phq9_7" value="1"></td>
+                            <td><input type="radio" name="phq9_7" value="2"></td>
+                            <td><input type="radio" name="phq9_7" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td>8. Двигаетесь или говорите так медленно, что это заметно окружающим? Или, наоборот, настолько возбуждены или суетливы, что двигаетесь гораздо больше обычного</td>
+                            <td><input type="radio" name="phq9_8" value="0"></td>
+                            <td><input type="radio" name="phq9_8" value="1"></td>
+                            <td><input type="radio" name="phq9_8" value="2"></td>
+                            <td><input type="radio" name="phq9_8" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td>9. Думать, что было бы лучше умереть или хотеть причинить себе вред</td>
+                            <td><input type="radio" name="phq9_9" value="0"></td>
+                            <td><input type="radio" name="phq9_9" value="1"></td>
+                            <td><input type="radio" name="phq9_9" value="2"></td>
+                            <td><input type="radio" name="phq9_9" value="3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p>Если Вы столкнулись с какими-либо из этих проблем, насколько они мешали вам выполнять свою работу, заниматься домашними делами и общаться с другими людьми?</p>
+            <div>
+                <input type="radio" id="phq9_difficulty_none" name="phq9_difficulty" value="0">
+                <label for="phq9_difficulty_none">Совсем не сложно</label>
+            </div>
+            <div>
+                <input type="radio" id="phq9_difficulty_mild" name="phq9_difficulty" value="1">
+                <label for="phq9_difficulty_mild">Немного сложно</label>
+            </div>
+            <div>
+                <input type="radio" id="phq9_difficulty_moderate" name="phq9_difficulty" value="2">
+                <label for="phq9_difficulty_moderate">Очень сложно</label>
+            </div>
+            <div>
+                <input type="radio" id="phq9_difficulty_severe" name="phq9_difficulty" value="3">
+                <label for="phq9_difficulty_severe">Очень сильно сложно</label>
+            </div>
+        </div>
+
+        
+        <div id="section7" class="section">
+            <h2>7. ГАД-7 (Генерализованное тревожное расстройство)</h2>
             <p><strong>Инструкция</strong>: Сколько раз за последние две недели Вас беспокоили следующие проблемы? Пожалуйста, отметьте галочкой вариант ответа.</p>
             
             <div class="table-container">
@@ -867,54 +1651,882 @@
             </div>
         </div>
 
-        <button type="submit" id="submitBtn">Отправить</button>
+        
+        <div id="section8" class="section">
+            <h2>8. Опросник здоровья пациента – физические симптомы (PHQ-15)</h2>
+            <p><strong>Инструкция</strong>: Насколько сильно Вас беспокоила каждая из перечисленных ниже проблем за последние 4 недели? Пожалуйста, отметьте галочкой вариант ответа.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Совсем не беспокоили (0)</th>
+                            <th>Немного встревожен (1)</th>
+                            <th>Очень обеспокоен (2)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Боли в животе</td>
+                            <td><input type="radio" name="phq15_1" value="0"></td>
+                            <td><input type="radio" name="phq15_1" value="1"></td>
+                            <td><input type="radio" name="phq15_1" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>2. Боль в спине</td>
+                            <td><input type="radio" name="phq15_2" value="0"></td>
+                            <td><input type="radio" name="phq15_2" value="1"></td>
+                            <td><input type="radio" name="phq15_2" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>3. Боль в руках, ногах или суставах (коленях, бедрах и т. д.)</td>
+                            <td><input type="radio" name="phq15_3" value="0"></td>
+                            <td><input type="radio" name="phq15_3" value="1"></td>
+                            <td><input type="radio" name="phq15_3" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>4. Менструальные спазмы или другие проблемы во время менструации [только для женщин]</td>
+                            <td><input type="radio" name="phq15_4" value="0"></td>
+                            <td><input type="radio" name="phq15_4" value="1"></td>
+                            <td><input type="radio" name="phq15_4" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>5. Головные боли</td>
+                            <td><input type="radio" name="phq15_5" value="0"></td>
+                            <td><input type="radio" name="phq15_5" value="1"></td>
+                            <td><input type="radio" name="phq15_5" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>6. Боль в груди</td>
+                            <td><input type="radio" name="phq15_6" value="0"></td>
+                            <td><input type="radio" name="phq15_6" value="1"></td>
+                            <td><input type="radio" name="phq15_6" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>7. Головокружение</td>
+                            <td><input type="radio" name="phq15_7" value="0"></td>
+                            <td><input type="radio" name="phq15_7" value="1"></td>
+                            <td><input type="radio" name="phq15_7" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>8. Обмороки</td>
+                            <td><input type="radio" name="phq15_8" value="0"></td>
+                            <td><input type="radio" name="phq15_8" value="1"></td>
+                            <td><input type="radio" name="phq15_8" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>9. Чувствуете, что Ваше сердце колотится или учащенно бьется</td>
+                            <td><input type="radio" name="phq15_9" value="0"></td>
+                            <td><input type="radio" name="phq15_9" value="1"></td>
+                            <td><input type="radio" name="phq15_9" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>10. Одышка</td>
+                            <td><input type="radio" name="phq15_10" value="0"></td>
+                            <td><input type="radio" name="phq15_10" value="1"></td>
+                            <td><input type="radio" name="phq15_10" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>11. Боль или проблемы во время полового акта</td>
+                            <td><input type="radio" name="phq15_11" value="0"></td>
+                            <td><input type="radio" name="phq15_11" value="1"></td>
+                            <td><input type="radio" name="phq15_11" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>12. Запор, жидкий стул или диарея</td>
+                            <td><input type="radio" name="phq15_12" value="0"></td>
+                            <td><input type="radio" name="phq15_12" value="1"></td>
+                            <td><input type="radio" name="phq15_12" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>13. Тошнота, метеоризм или расстройство желудка</td>
+                            <td><input type="radio" name="phq15_13" value="0"></td>
+                            <td><input type="radio" name="phq15_13" value="1"></td>
+                            <td><input type="radio" name="phq15_13" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>14. Чувство усталости или упадок сил</td>
+                            <td><input type="radio" name="phq15_14" value="0"></td>
+                            <td><input type="radio" name="phq15_14" value="1"></td>
+                            <td><input type="radio" name="phq15_14" value="2"></td>
+                        </tr>
+                        <tr>
+                            <td>15. Трудности со сном</td>
+                            <td><input type="radio" name="phq15_15" value="0"></td>
+                            <td><input type="radio" name="phq15_15" value="1"></td>
+                            <td><input type="radio" name="phq15_15" value="2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        
+        <div id="section9" class="section">
+            <h2>9. Список функционального поведения полости рта (OBC)</h2>
+            <p><strong>Инструкция</strong>: Как часто Вы выполняли каждое из следующих действий в течение последнего месяца? Если частота действий различается, выберите наиболее высокий вариант. Пожалуйста, ответьте на каждый пункт, не пропуская ни одного.</p>
+            
+            <h3>Действия во время сна:</h3>
+            <div class="table-container">
+                <table class="obc-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Никогда (0)</th>
+                            <th>&lt;1 ночь/месяц (1)</th>
+                            <th>1-3 ночи/месяц (2)</th>
+                            <th>1-3 ночи/неделя (3)</th>
+                            <th>4-7 ночей/неделя (4)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Стискивание или скрежетание зубами во время сна — в зависимости от Вашего дневного состояния (имеющаяся у Вас информация)</td>
+                            <td><input type="radio" name="obc_1" value="0"></td>
+                            <td><input type="radio" name="obc_1" value="1"></td>
+                            <td><input type="radio" name="obc_1" value="2"></td>
+                            <td><input type="radio" name="obc_1" value="3"></td>
+                            <td><input type="radio" name="obc_1" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>2. Сон в положении, оказывающим давление на нижнюю челюсть (например, на животе или на боку)</td>
+                            <td><input type="radio" name="obc_2" value="0"></td>
+                            <td><input type="radio" name="obc_2" value="1"></td>
+                            <td><input type="radio" name="obc_2" value="2"></td>
+                            <td><input type="radio" name="obc_2" value="3"></td>
+                            <td><input type="radio" name="obc_2" value="4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>Деятельность в часы бодрствования:</h3>
+            <div class="table-container">
+                <table class="obc-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Никогда (0)</th>
+                            <th>На короткое время (1)</th>
+                            <th>В течение некоторого времени (2)</th>
+                            <th>Большую часть времени (3)</th>
+                            <th>Все время (4)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3. Скрежетание зубами во время бодрствования</td>
+                            <td><input type="radio" name="obc_3" value="0"></td>
+                            <td><input type="radio" name="obc_3" value="1"></td>
+                            <td><input type="radio" name="obc_3" value="2"></td>
+                            <td><input type="radio" name="obc_3" value="3"></td>
+                            <td><input type="radio" name="obc_3" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>4. Стискивание зубов во время бодрствования</td>
+                            <td><input type="radio" name="obc_4" value="0"></td>
+                            <td><input type="radio" name="obc_4" value="1"></td>
+                            <td><input type="radio" name="obc_4" value="2"></td>
+                            <td><input type="radio" name="obc_4" value="3"></td>
+                            <td><input type="radio" name="obc_4" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>5. Сжимание, соприкосновение зубов, удержание их вместе не во время жевания (т. е. наличие контакта между верхними и нижними зубами)</td>
+                            <td><input type="radio" name="obc_5" value="0"></td>
+                            <td><input type="radio" name="obc_5" value="1"></td>
+                            <td><input type="radio" name="obc_5" value="2"></td>
+                            <td><input type="radio" name="obc_5" value="3"></td>
+                            <td><input type="radio" name="obc_5" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>6. Удерживание мышц напряженными или жесткими, при этом не стискивая, и не сжимая зубы</td>
+                            <td><input type="radio" name="obc_6" value="0"></td>
+                            <td><input type="radio" name="obc_6" value="1"></td>
+                            <td><input type="radio" name="obc_6" value="2"></td>
+                            <td><input type="radio" name="obc_6" value="3"></td>
+                            <td><input type="radio" name="obc_6" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>7. Удерживание или выдвижение нижней челюсти вперед или в сторону</td>
+                            <td><input type="radio" name="obc_7" value="0"></td>
+                            <td><input type="radio" name="obc_7" value="1"></td>
+                            <td><input type="radio" name="obc_7" value="2"></td>
+                            <td><input type="radio" name="obc_7" value="3"></td>
+                            <td><input type="radio" name="obc_7" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>8. Сильное прижимание языка к зубам</td>
+                            <td><input type="radio" name="obc_8" value="0"></td>
+                            <td><input type="radio" name="obc_8" value="1"></td>
+                            <td><input type="radio" name="obc_8" value="2"></td>
+                            <td><input type="radio" name="obc_8" value="3"></td>
+                            <td><input type="radio" name="obc_8" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>9. Нахождение языка между зубами</td>
+                            <td><input type="radio" name="obc_9" value="0"></td>
+                            <td><input type="radio" name="obc_9" value="1"></td>
+                            <td><input type="radio" name="obc_9" value="2"></td>
+                            <td><input type="radio" name="obc_9" value="3"></td>
+                            <td><input type="radio" name="obc_9" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>10. Кусание, жевание или игра с языком, щеками или губами</td>
+                            <td><input type="radio" name="obc_10" value="0"></td>
+                            <td><input type="radio" name="obc_10" value="1"></td>
+                            <td><input type="radio" name="obc_10" value="2"></td>
+                            <td><input type="radio" name="obc_10" value="3"></td>
+                            <td><input type="radio" name="obc_10" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>11. Удерживание нижней челюсти в напряженном или жестком положении, как будто для ее поддержки или защиты</td>
+                            <td><input type="radio" name="obc_11" value="0"></td>
+                            <td><input type="radio" name="obc_11" value="1"></td>
+                            <td><input type="radio" name="obc_11" value="2"></td>
+                            <td><input type="radio" name="obc_11" value="3"></td>
+                            <td><input type="radio" name="obc_11" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>12. Удерживание между зубами или кусание предметов, таких как волосы, трубка, карандаш, ручка, пальцы, ногти и т. д.</td>
+                            <td><input type="radio" name="obc_12" value="0"></td>
+                            <td><input type="radio" name="obc_12" value="1"></td>
+                            <td><input type="radio" name="obc_12" value="2"></td>
+                            <td><input type="radio" name="obc_12" value="3"></td>
+                            <td><input type="radio" name="obc_12" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>13. Использование жевательной резинки</td>
+                            <td><input type="radio" name="obc_13" value="0"></td>
+                            <td><input type="radio" name="obc_13" value="1"></td>
+                            <td><input type="radio" name="obc_13" value="2"></td>
+                            <td><input type="radio" name="obc_13" value="3"></td>
+                            <td><input type="radio" name="obc_13" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>14. Игра на музыкальных инструментах, требующих использования рта или челюсти (например, деревянные духовые, медные духовые, струнные инструменты)</td>
+                            <td><input type="radio" name="obc_14" value="0"></td>
+                            <td><input type="radio" name="obc_14" value="1"></td>
+                            <td><input type="radio" name="obc_14" value="2"></td>
+                            <td><input type="radio" name="obc_14" value="3"></td>
+                            <td><input type="radio" name="obc_14" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>15. Удержание руки на челюсти в положении покоя, например, подперев подбородок ладонью</td>
+                            <td><input type="radio" name="obc_15" value="0"></td>
+                            <td><input type="radio" name="obc_15" value="1"></td>
+                            <td><input type="radio" name="obc_15" value="2"></td>
+                            <td><input type="radio" name="obc_15" value="3"></td>
+                            <td><input type="radio" name="obc_15" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>16. Пережевывание пищи только на одной стороне</td>
+                            <td><input type="radio" name="obc_16" value="0"></td>
+                            <td><input type="radio" name="obc_16" value="1"></td>
+                            <td><input type="radio" name="obc_16" value="2"></td>
+                            <td><input type="radio" name="obc_16" value="3"></td>
+                            <td><input type="radio" name="obc_16" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>17. Прием пищи между основными приемами пищи (только продукты, требующие пережевывания)</td>
+                            <td><input type="radio" name="obc_17" value="0"></td>
+                            <td><input type="radio" name="obc_17" value="1"></td>
+                            <td><input type="radio" name="obc_17" value="2"></td>
+                            <td><input type="radio" name="obc_17" value="3"></td>
+                            <td><input type="radio" name="obc_17" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>18. Непрерывный разговор (например, обучение, продажи, обслуживание клиентов)</td>
+                            <td><input type="radio" name="obc_18" value="0"></td>
+                            <td><input type="radio" name="obc_18" value="1"></td>
+                            <td><input type="radio" name="obc_18" value="2"></td>
+                            <td><input type="radio" name="obc_18" value="3"></td>
+                            <td><input type="radio" name="obc_18" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>19. Пение</td>
+                            <td><input type="radio" name="obc_19" value="0"></td>
+                            <td><input type="radio" name="obc_19" value="1"></td>
+                            <td><input type="radio" name="obc_19" value="2"></td>
+                            <td><input type="radio" name="obc_19" value="3"></td>
+                            <td><input type="radio" name="obc_19" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>20. Зевота</td>
+                            <td><input type="radio" name="obc_20" value="0"></td>
+                            <td><input type="radio" name="obc_20" value="1"></td>
+                            <td><input type="radio" name="obc_20" value="2"></td>
+                            <td><input type="radio" name="obc_20" value="3"></td>
+                            <td><input type="radio" name="obc_20" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td>21. Удерживание телефона между головой и плечами</td>
+                            <td><input type="radio" name="obc_21" value="0"></td>
+                            <td><input type="radio" name="obc_21" value="1"></td>
+                            <td><input type="radio" name="obc_21" value="2"></td>
+                            <td><input type="radio" name="obc_21" value="3"></td>
+                            <td><input type="radio" name="obc_21" value="4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <button type="button" id="calculateBtn">Рассчитать результаты</button>
     </form>
 
-    <div id="thankYou" class="thank-you">
-        <h2>Спасибо за прохождение теста!</h2>
-        <p>Ваши ответы успешно отправлены.</p>
+    <div id="results" class="results">
+        <h2>Результаты оценки</h2>
+        
+        <div class="result-item">
+            <h3>1. Рисунок боли</h3>
+            <p>Количество болевых зон: <span id="painZonesResult"></span></p>
+            <p class="interpretation" id="painZonesInterpretation"></p>
+        </div>
+        
+        <div class="result-item">
+            <h3>2. Шкала хронической боли (GCPS версия 2.0)</h3>
+            <p>Характеристика интенсивности боли (CPI): <span id="cpiResult"></span>/100</p>
+            <p>Баллы за дни нетрудоспособности: <span id="disabilityDaysPointsResult"></span>/3</p>
+            <p>Баллы за интерференцию: <span id="interferencePointsResult"></span>/3</p>
+            <p>Общий балл нетрудоспособности: <span id="totalDisabilityPointsResult"></span>/6</p>
+            <p>Степень хронической боли: <span id="chronicPainGradeResult"></span></p>
+            <p class="interpretation" id="gcpsInterpretation"></p>
+        </div>
+        
+        <div class="result-item">
+            <h3>3. Шкала ограничения функции нижней челюсти-8 (JFLS-8)</h3>
+            <p>Общий балл: <span id="jfls8Result"></span>/10</p>
+        </div>
+        
+        <div class="result-item">
+            <h3>4. Шкала ограничения функции нижней челюсти-20 (JFLS-20)</h3>
+            <p>Жевание: <span id="jfls20ChewingResult"></span>/10</p>
+            <p>Мобильность: <span id="jfls20MobilityResult"></span>/10</p>
+            <p>Вербальное и эмоциональное общение: <span id="jfls20CommunicationResult"></span>/10</p>
+            <p>Глобальная (общая) оценка: <span id="jfls20GlobalResult"></span>/10</p>
+            <p>Эквивалент JFLS-8: <span id="jfls20Equivalent8Result"></span>/10</p>
+        </div>
+        
+        <div class="result-item">
+            <h3>5. Анкета здоровья пациента (PHQ-4)</h3>
+            <p>Общий балл: <span id="phq4Result"></span>/12</p>
+            <p class="interpretation" id="phq4Interpretation"></p>
+        </div>
+        
+        <div class="result-item">
+            <h3>6. Анкета здоровья пациента (PHQ-9)</h3>
+            <p>Общий балл: <span id="phq9Result"></span>/27</p>
+            <p class="interpretation" id="phq9Interpretation"></p>
+        </div>
+        
+        <div class="result-item">
+            <h3>7. ГАД-7 (Генерализованное тревожное расстройство)</h3>
+            <p>Общий балл: <span id="gad7Result"></span>/21</p>
+            <p class="interpretation" id="gad7Interpretation"></p>
+        </div>
+        
+        <div class="result-item">
+            <h3>8. Опросник здоровья пациента – физические симптомы (PHQ-15)</h3>
+            <p>Общий балл: <span id="phq15Result"></span>/30</p>
+            <p class="interpretation" id="phq15Interpretation"></p>
+        </div>
+        
+        <div class="result-item">
+            <h3>9. Список функционального поведения полости рта (OBC)</h3>
+            <p>Метод 1 (количество элементов с ненулевым ответом): <span id="obcMethod1Result"></span>/21</p>
+            <p>Метод 2 (суммарный балл): <span id="obcMethod2Result"></span>/84</p>
+            <p class="interpretation" id="obcInterpretation"></p>
+        </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('tmdForm');
+            const calculateBtn = document.getElementById('calculateBtn');
+            calculateBtn.addEventListener('click', calculateResults);
             
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
+            function calculateResults() {
+                // 1. Рисунок боли
+                const painZones = parseInt(document.getElementById('painZones').value) || 0;
+                document.getElementById('painZonesResult').textContent = painZones;
                 
-                // Проверка заполнения обязательных полей
-                const lastName = document.getElementById('patientLastName').value.trim();
-                const firstName = document.getElementById('patientFirstName').value.trim();
-                const doctorEmail = document.getElementById('doctorEmail').value.trim();
+                let painZonesInterpretation = '';
+                if (painZones === 0) {
+                    painZonesInterpretation = 'Нет боли';
+                } else if (painZones === 1) {
+                    painZonesInterpretation = 'Незначительная боль';
+                } else if (painZones >= 2 && painZones <= 3) {
+                    painZonesInterpretation = 'Умеренная боль';
+                } else if (painZones >= 4 && painZones <= 5) {
+                    painZonesInterpretation = 'Сильная боль';
+                } else {
+                    painZonesInterpretation = 'Очень сильная, распространенная боль';
+                }
+                document.getElementById('painZonesInterpretation').textContent = painZonesInterpretation;
                 
-                if (!lastName || !firstName || !doctorEmail) {
-                    alert('Пожалуйста, заполните все обязательные поля (отмечены звездочкой *)');
-                    return;
+                // 2. Шкала хронической боли (GCPS версия 2.0)
+                const currentPainEl = document.querySelector('input[name="currentPain"]:checked');
+                const worstPainEl = document.querySelector('input[name="worstPain"]:checked');
+                const averagePainEl = document.querySelector('input[name="averagePain"]:checked');
+                
+                // Проверяем, выбраны ли все необходимые значения
+                if (!currentPainEl || !worstPainEl || !averagePainEl) {
+                    document.getElementById('cpiResult').textContent = "Не все поля заполнены";
+                    document.getElementById('gcpsInterpretation').textContent = "Невозможно рассчитать CPI - не все поля заполнены";
+                } else {
+                    const currentPain = parseInt(currentPainEl.value);
+                    const worstPain = parseInt(worstPainEl.value);
+                    const averagePain = parseInt(averagePainEl.value);
+                    
+                    // Характеристика интенсивности боли (CPI)
+                    const cpi = Math.round(((currentPain + worstPain + averagePain) / 3) * 10);
+                    document.getElementById('cpiResult').textContent = cpi;
+                    
+                    // Баллы за дни нетрудоспособности
+                    const disabilityDays = parseInt(document.getElementById('disabilityDays').value) || 0;
+                    let disabilityDaysPoints = 0;
+                    
+                    if (disabilityDays >= 0 && disabilityDays <= 1) {
+                        disabilityDaysPoints = 0;
+                    } else if (disabilityDays === 2) {
+                        disabilityDaysPoints = 1;
+                    } else if (disabilityDays >= 3 && disabilityDays <= 5) {
+                        disabilityDaysPoints = 2;
+                    } else if (disabilityDays >= 6) {
+                        disabilityDaysPoints = 3;
+                    }
+                    
+                    document.getElementById('disabilityDaysPointsResult').textContent = disabilityDaysPoints;
+                    
+                    // Баллы за интерференцию
+                    const dailyInterferenceEl = document.querySelector('input[name="dailyInterference"]:checked');
+                    const socialInterferenceEl = document.querySelector('input[name="socialInterference"]:checked');
+                    const workInterferenceEl = document.querySelector('input[name="workInterference"]:checked');
+                    
+                    if (!dailyInterferenceEl || !socialInterferenceEl || !workInterferenceEl) {
+                        document.getElementById('interferencePointsResult').textContent = "Не все поля заполнены";
+                    } else {
+                        const dailyInterference = parseInt(dailyInterferenceEl.value);
+                        const socialInterference = parseInt(socialInterferenceEl.value);
+                        const workInterference = parseInt(workInterferenceEl.value);
+                        
+                        const interferenceScore = Math.round(((dailyInterference + socialInterference + workInterference) / 3) * 10);
+                        let interferencePoints = 0;
+                        
+                        if (interferenceScore >= 0 && interferenceScore <= 29) {
+                            interferencePoints = 0;
+                        } else if (interferenceScore >= 30 && interferenceScore <= 49) {
+                            interferencePoints = 1;
+                        } else if (interferenceScore >= 50 && interferenceScore <= 69) {
+                            interferencePoints = 2;
+                        } else if (interferenceScore >= 70) {
+                            interferencePoints = 3;
+                        }
+                        
+                        document.getElementById('interferencePointsResult').textContent = interferencePoints;
+                        
+                        // Общий балл нетрудоспособности
+                        const totalDisabilityPoints = disabilityDaysPoints + interferencePoints;
+                        document.getElementById('totalDisabilityPointsResult').textContent = totalDisabilityPoints;
+                        
+                        // Степень хронической боли
+                        let chronicPainGrade = '';
+                        let gcpsInterpretation = '';
+                        
+                        if (cpi === 0) {
+                            chronicPainGrade = '0';
+                            gcpsInterpretation = 'Нет боли';
+                        } else if (cpi < 50 && totalDisabilityPoints < 3) {
+                            chronicPainGrade = 'I';
+                            gcpsInterpretation = 'Боль низкой интенсивности, без инвалидности';
+                        } else if (cpi >= 50 && totalDisabilityPoints < 3) {
+                            chronicPainGrade = 'II';
+                            gcpsInterpretation = 'Боль высокой интенсивности, без инвалидности';
+                        } else if (totalDisabilityPoints >= 3 && totalDisabilityPoints <= 4) {
+                            chronicPainGrade = 'III';
+                            gcpsInterpretation = 'Умеренно ограничивающая боль';
+                        } else if (totalDisabilityPoints >= 5) {
+                            chronicPainGrade = 'IV';
+                            gcpsInterpretation = 'Строго ограничивающая боль';
+                        }
+                        
+                        document.getElementById('chronicPainGradeResult').textContent = chronicPainGrade;
+                        document.getElementById('gcpsInterpretation').textContent = gcpsInterpretation;
+                    }
                 }
                 
-                // Собираем данные формы
-                const formData = new FormData(form);
+                // 3. Шкала ограничения функции нижней челюсти-8 (JFLS-8)
+                const jfls8Values = [];
+                let jfls8MissingCount = 0;
                 
-                // Отправляем данные на сервер
-                fetch('/submit', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => {
-                    if (response.ok) {
-                        // Скрываем форму и показываем сообщение благодарности
-                        form.style.display = 'none';
-                        document.getElementById('thankYou').style.display = 'block';
-                        window.scrollTo(0, 0);
+                for (let i = 1; i <= 8; i++) {
+                    const radioEl = document.querySelector(`input[name="jfls${i}"]:checked`);
+                    if (radioEl) {
+                        jfls8Values.push(parseInt(radioEl.value));
                     } else {
-                        throw new Error('Ошибка при отправке данных');
+                        jfls8MissingCount++;
                     }
-                })
-                .catch(error => {
-                    console.error('Ошибка:', error);
-                    alert('Произошла ошибка при отправке данных. Пожалуйста, попробуйте еще раз.');
-                });
-            });
+                }
+                
+                // Проверяем, что пропущено не более 2 элементов
+                if (jfls8MissingCount > 2) {
+                    document.getElementById('jfls8Result').textContent = "Пропущено более 2 элементов";
+                } else {
+                    const jfls8Sum = jfls8Values.reduce((acc, val) => acc + val, 0);
+                    const jfls8Score = Math.round((jfls8Sum / (8 - jfls8MissingCount)) * 10) / 10;
+                    document.getElementById('jfls8Result').textContent = jfls8Score;
+                }
+                
+                // 4. Шкала ограничения функции нижней челюсти-20 (JFLS-20)
+                // Подшкала "Жевание" (пункты 1-6)
+                const jfls20ChewingValues = [];
+                let jfls20ChewingMissingCount = 0;
+                
+                for (let i = 1; i <= 6; i++) {
+                    const radioEl = document.querySelector(`input[name="jfls20_${i}"]:checked`);
+                    if (radioEl) {
+                        jfls20ChewingValues.push(parseInt(radioEl.value));
+                    } else {
+                        jfls20ChewingMissingCount++;
+                    }
+                }
+                
+                // Проверяем, что пропущено не более 2 элементов
+                if (jfls20ChewingMissingCount > 2) {
+                    document.getElementById('jfls20ChewingResult').textContent = "Пропущено более 2 элементов";
+                } else {
+                    const jfls20ChewingSum = jfls20ChewingValues.reduce((acc, val) => acc + val, 0);
+                    const jfls20ChewingScore = Math.round((jfls20ChewingSum / (6 - jfls20ChewingMissingCount)) * 10) / 10;
+                    document.getElementById('jfls20ChewingResult').textContent = jfls20ChewingScore;
+                }
+                
+                // Подшкала "Мобильность" (пункты 7-10)
+                const jfls20MobilityValues = [];
+                let jfls20MobilityMissingCount = 0;
+                
+                for (let i = 7; i <= 10; i++) {
+                    const radioEl = document.querySelector(`input[name="jfls20_${i}"]:checked`);
+                    if (radioEl) {
+                        jfls20MobilityValues.push(parseInt(radioEl.value));
+                    } else {
+                        jfls20MobilityMissingCount++;
+                    }
+                }
+                
+                // Проверяем, что пропущено не более 1 элемента
+                if (jfls20MobilityMissingCount > 1) {
+                    document.getElementById('jfls20MobilityResult').textContent = "Пропущено более 1 элемента";
+                } else {
+                    const jfls20MobilitySum = jfls20MobilityValues.reduce((acc, val) => acc + val, 0);
+                    const jfls20MobilityScore = Math.round((jfls20MobilitySum / (4 - jfls20MobilityMissingCount)) * 10) / 10;
+                    document.getElementById('jfls20MobilityResult').textContent = jfls20MobilityScore;
+                }
+                
+                // Подшкала "Вербальное и эмоциональное общение" (пункты 13-20)
+                const jfls20CommunicationValues = [];
+                let jfls20CommunicationMissingCount = 0;
+                
+                for (let i = 13; i <= 20; i++) {
+                    const radioEl = document.querySelector(`input[name="jfls20_${i}"]:checked`);
+                    if (radioEl) {
+                        jfls20CommunicationValues.push(parseInt(radioEl.value));
+                    } else {
+                        jfls20CommunicationMissingCount++;
+                    }
+                }
+                
+                // Проверяем, что пропущено не более 2 элементов
+                if (jfls20CommunicationMissingCount > 2) {
+                    document.getElementById('jfls20CommunicationResult').textContent = "Пропущено более 2 элементов";
+                } else {
+                    const jfls20CommunicationSum = jfls20CommunicationValues.reduce((acc, val) => acc + val, 0);
+                    const jfls20CommunicationScore = Math.round((jfls20CommunicationSum / (8 - jfls20CommunicationMissingCount)) * 10) / 10;
+                    document.getElementById('jfls20CommunicationResult').textContent = jfls20CommunicationScore;
+                }
+                
+                // Глобальная (общая) оценка
+                if (document.getElementById('jfls20ChewingResult').textContent !== "Пропущено более 2 элементов" &&
+                    document.getElementById('jfls20MobilityResult').textContent !== "Пропущено более 1 элемента" &&
+                    document.getElementById('jfls20CommunicationResult').textContent !== "Пропущено более 2 элементов") {
+                    
+                    const jfls20ChewingScore = parseFloat(document.getElementById('jfls20ChewingResult').textContent);
+                    const jfls20MobilityScore = parseFloat(document.getElementById('jfls20MobilityResult').textContent);
+                    const jfls20CommunicationScore = parseFloat(document.getElementById('jfls20CommunicationResult').textContent);
+                    
+                    const jfls20GlobalScore = Math.round(((jfls20ChewingScore + jfls20MobilityScore + jfls20CommunicationScore) / 3) * 10) / 10;
+                    document.getElementById('jfls20GlobalResult').textContent = jfls20GlobalScore;
+                } else {
+                    document.getElementById('jfls20GlobalResult').textContent = "Невозможно рассчитать";
+                }
+                
+                // Эквивалент JFLS-8 (пункты 1, 3, 6, 10, 11, 12, 13, 19)
+                const jfls20Equivalent8Values = [];
+                let jfls20Equivalent8MissingCount = 0;
+                
+                const jfls20Equivalent8Indices = [1, 3, 6, 10, 11, 12, 13, 19];
+                
+                for (const i of jfls20Equivalent8Indices) {
+                    const radioEl = document.querySelector(`input[name="jfls20_${i}"]:checked`);
+                    if (radioEl) {
+                        jfls20Equivalent8Values.push(parseInt(radioEl.value));
+                    } else {
+                        jfls20Equivalent8MissingCount++;
+                    }
+                }
+                
+                // Проверяем, что пропущено не более 2 элементов
+                if (jfls20Equivalent8MissingCount > 2) {
+                    document.getElementById('jfls20Equivalent8Result').textContent = "Пропущено более 2 элементов";
+                } else {
+                    const jfls20Equivalent8Sum = jfls20Equivalent8Values.reduce((acc, val) => acc + val, 0);
+                    const jfls20Equivalent8Score = Math.round((jfls20Equivalent8Sum / (8 - jfls20Equivalent8MissingCount)) * 10) / 10;
+                    document.getElementById('jfls20Equivalent8Result').textContent = jfls20Equivalent8Score;
+                }
+                
+                // 5. Анкета здоровья пациента (PHQ-4)
+                const phq4Values = [];
+                let phq4MissingCount = 0;
+                
+                for (let i = 1; i <= 4; i++) {
+                    const radioEl = document.querySelector(`input[name="phq4_${i}"]:checked`);
+                    if (radioEl) {
+                        phq4Values.push(parseInt(radioEl.value));
+                    } else {
+                        phq4MissingCount++;
+                    }
+                }
+                
+                // Проверяем, что пропущено не более 1 элемента
+                if (phq4MissingCount > 1) {
+                    document.getElementById('phq4Result').textContent = "Пропущено более 1 элемента";
+                    document.getElementById('phq4Interpretation').textContent = "";
+                } else if (phq4MissingCount === 1) {
+                    const phq4Sum = phq4Values.reduce((acc, val) => acc + val, 0);
+                    const phq4Score = Math.round((phq4Sum * 4) / (4 - phq4MissingCount));
+                    document.getElementById('phq4Result').textContent = phq4Score;
+                    
+                    let phq4Interpretation = '';
+                    if (phq4Score >= 0 && phq4Score <= 3) {
+                        phq4Interpretation = 'Нет дистресса';
+                    } else if (phq4Score >= 4 && phq4Score <= 5) {
+                        phq4Interpretation = 'Легкий дистресс';
+                    } else if (phq4Score >= 6 && phq4Score <= 8) {
+                        phq4Interpretation = 'Умеренный дистресс';
+                    } else {
+                        phq4Interpretation = 'Сильный дистресс';
+                    }
+                    document.getElementById('phq4Interpretation').textContent = phq4Interpretation;
+                } else {
+                    const phq4Sum = phq4Values.reduce((acc, val) => acc + val, 0);
+                    document.getElementById('phq4Result').textContent = phq4Sum;
+                    
+                    let phq4Interpretation = '';
+                    if (phq4Sum >= 0 && phq4Sum <= 3) {
+                        phq4Interpretation = 'Нет дистресса';
+                    } else if (phq4Sum >= 4 && phq4Sum <= 5) {
+                        phq4Interpretation = 'Легкий дистресс';
+                    } else if (phq4Sum >= 6 && phq4Sum <= 8) {
+                        phq4Interpretation = 'Умеренный дистресс';
+                    } else {
+                        phq4Interpretation = 'Сильный дистресс';
+                    }
+                    document.getElementById('phq4Interpretation').textContent = phq4Interpretation;
+                }
+                
+                // 6. Анкета здоровья пациента (PHQ-9)
+                const phq9Values = [];
+                let phq9MissingCount = 0;
+                
+                for (let i = 1; i <= 9; i++) {
+                    const radioEl = document.querySelector(`input[name="phq9_${i}"]:checked`);
+                    if (radioEl) {
+                        phq9Values.push(parseInt(radioEl.value));
+                    } else {
+                        phq9MissingCount++;
+                    }
+                }
+                
+                // Проверяем, что пропущено не более 3 элементов
+                if (phq9MissingCount > 3) {
+                    document.getElementById('phq9Result').textContent = "Пропущено более 3 элементов";
+                    document.getElementById('phq9Interpretation').textContent = "";
+                } else if (phq9MissingCount > 0) {
+                    const phq9Sum = phq9Values.reduce((acc, val) => acc + val, 0);
+                    const phq9Score = Math.round((phq9Sum * 9) / (9 - phq9MissingCount));
+                    document.getElementById('phq9Result').textContent = phq9Score;
+                    
+                    let phq9Interpretation = '';
+                    if (phq9Score >= 0 && phq9Score <= 5) {
+                        phq9Interpretation = 'Нет депрессии';
+                    } else if (phq9Score >= 6 && phq9Score <= 10) {
+                        phq9Interpretation = 'Легкая депрессия';
+                    } else if (phq9Score >= 11 && phq9Score <= 15) {
+                        phq9Interpretation = 'Умеренная депрессия';
+                    } else if (phq9Score >= 16 && phq9Score <= 20) {
+                        phq9Interpretation = 'Умеренно-тяжелая депрессия';
+                    } else {
+                        phq9Interpretation = 'Тяжелая депрессия';
+                    }
+                    document.getElementById('phq9Interpretation').textContent = phq9Interpretation;
+                } else {
+                    const phq9Sum = phq9Values.reduce((acc, val) => acc + val, 0);
+                    document.getElementById('phq9Result').textContent = phq9Sum;
+                    
+                    let phq9Interpretation = '';
+                    if (phq9Sum >= 0 && phq9Sum <= 5) {
+                        phq9Interpretation = 'Нет депрессии';
+                    } else if (phq9Sum >= 6 && phq9Sum <= 10) {
+                        phq9Interpretation = 'Легкая депрессия';
+                    } else if (phq9Sum >= 11 && phq9Sum <= 15) {
+                        phq9Interpretation = 'Умеренная депрессия';
+                    } else if (phq9Sum >= 16 && phq9Sum <= 20) {
+                        phq9Interpretation = 'Умеренно-тяжелая депрессия';
+                    } else {
+                        phq9Interpretation = 'Тяжелая депрессия';
+                    }
+                    document.getElementById('phq9Interpretation').textContent = phq9Interpretation;
+                }
+                
+                // 7. ГАД-7 (Генерализованное тревожное расстройство)
+                const gad7Values = [];
+                let gad7MissingCount = 0;
+                
+                for (let i = 1; i <= 7; i++) {
+                    const radioEl = document.querySelector(`input[name="gad7_${i}"]:checked`);
+                    if (radioEl) {
+                        gad7Values.push(parseInt(radioEl.value));
+                    } else {
+                        gad7MissingCount++;
+                    }
+                }
+                
+                // Проверяем, что пропущено не более 2 элементов
+                if (gad7MissingCount > 2) {
+                    document.getElementById('gad7Result').textContent = "Пропущено более 2 элементов";
+                    document.getElementById('gad7Interpretation').textContent = "";
+                } else if (gad7MissingCount > 0) {
+                    const gad7Sum = gad7Values.reduce((acc, val) => acc + val, 0);
+                    const gad7Score = Math.round((gad7Sum * 7) / (7 - gad7MissingCount));
+                    document.getElementById('gad7Result').textContent = gad7Score;
+                    
+                    let gad7Interpretation = '';
+                    if (gad7Score >= 0 && gad7Score <= 5) {
+                        gad7Interpretation = 'Нет тревоги';
+                    } else if (gad7Score >= 6 && gad7Score <= 10) {
+                        gad7Interpretation = 'Легкая тревожность';
+                    } else if (gad7Score >= 11 && gad7Score <= 15) {
+                        gad7Interpretation = 'Умеренная тревожность';
+                    } else {
+                        gad7Interpretation = 'Сильная тревога';
+                    }
+                    document.getElementById('gad7Interpretation').textContent = gad7Interpretation;
+                } else {
+                    const gad7Sum = gad7Values.reduce((acc, val) => acc + val, 0);
+                    document.getElementById('gad7Result').textContent = gad7Sum;
+                    
+                    let gad7Interpretation = '';
+                    if (gad7Sum >= 0 && gad7Sum <= 5) {
+                        gad7Interpretation = 'Нет тревоги';
+                    } else if (gad7Sum >= 6 && gad7Sum <= 10) {
+                        gad7Interpretation = 'Легкая тревожность';
+                    } else if (gad7Sum >= 11 && gad7Sum <= 15) {
+                        gad7Interpretation = 'Умеренная тревожность';
+                    } else {
+                        gad7Interpretation = 'Сильная тревога';
+                    }
+                    document.getElementById('gad7Interpretation').textContent = gad7Interpretation;
+                }
+                
+                // 8. Опросник здоровья пациента – физические симптомы (PHQ-15)
+                const phq15Values = [];
+                let phq15MissingCount = 0;
+                
+                for (let i = 1; i <= 15; i++) {
+                    const radioEl = document.querySelector(`input[name="phq15_${i}"]:checked`);
+                    if (radioEl) {
+                        phq15Values.push(parseInt(radioEl.value));
+                    } else {
+                        phq15MissingCount++;
+                    }
+                }
+                
+                // Проверяем, что пропущено не более 5 элементов
+                if (phq15MissingCount > 5) {
+                    document.getElementById('phq15Result').textContent = "Пропущено более 5 элементов";
+                    document.getElementById('phq15Interpretation').textContent = "";
+                } else if (phq15MissingCount > 0) {
+                    const phq15Sum = phq15Values.reduce((acc, val) => acc + val, 0);
+                    const phq15Score = Math.round((phq15Sum * 15) / (15 - phq15MissingCount));
+                    document.getElementById('phq15Result').textContent = phq15Score;
+                    
+                    let phq15Interpretation = '';
+                    if (phq15Score >= 0 && phq15Score <= 4) {
+                        phq15Interpretation = 'Минимальная тяжесть симптомов';
+                    } else if (phq15Score >= 5 && phq15Score <= 10) {
+                        phq15Interpretation = 'Низкая тяжесть симптомов';
+                    } else if (phq15Score >= 11 && phq15Score <= 14) {
+                        phq15Interpretation = 'Средняя тяжесть симптомов';
+                    } else {
+                        phq15Interpretation = 'Высокая тяжесть симптомов';
+                    }
+                    document.getElementById('phq15Interpretation').textContent = phq15Interpretation;
+                } else {
+                    const phq15Sum = phq15Values.reduce((acc, val) => acc + val, 0);
+                    document.getElementById('phq15Result').textContent = phq15Sum;
+                    
+                    let phq15Interpretation = '';
+                    if (phq15Sum >= 0 && phq15Sum <= 4) {
+                        phq15Interpretation = 'Минимальная тяжесть симптомов';
+                    } else if (phq15Sum >= 5 && phq15Sum <= 10) {
+                        phq15Interpretation = 'Низкая тяжесть симптомов';
+                    } else if (phq15Sum >= 11 && phq15Sum <= 14) {
+                        phq15Interpretation = 'Средняя тяжесть симптомов';
+                    } else {
+                        phq15Interpretation = 'Высокая тяжесть симптомов';
+                    }
+                    document.getElementById('phq15Interpretation').textContent = phq15Interpretation;
+                }
+                
+                // 9. Список функционального поведения полости рта (OBC)
+                const obcValues = [];
+                let nonZeroCount = 0;
+                
+                for (let i = 1; i <= 21; i++) {
+                    const radioEl = document.querySelector(`input[name="obc_${i}"]:checked`);
+                    if (radioEl) {
+                        const value = parseInt(radioEl.value);
+                        obcValues.push(value);
+                        if (value > 0) {
+                            nonZeroCount++;
+                        }
+                    }
+                }
+                
+                // Метод 1: Количество элементов с ненулевым ответом
+                document.getElementById('obcMethod1Result').textContent = nonZeroCount;
+                
+                // Метод 2: Суммарный балл
+                const obcSum = obcValues.reduce((acc, val) => acc + val, 0);
+                document.getElementById('obcMethod2Result').textContent = obcSum;
+                
+                let obcInterpretation = '';
+                if (obcSum === 0) {
+                    obcInterpretation = 'Нет парафункции';
+                } else if (obcSum >= 1 && obcSum <= 16) {
+                    obcInterpretation = 'Нормальное поведение';
+                } else if (obcSum >= 17 && obcSum <= 24) {
+                    obcInterpretation = 'Низкий уровень парафункции (встречается в два раза чаще у людей с ВНЧС)';
+                } else {
+                    obcInterpretation = 'Высокий уровень парафункции (встречается в 17 раз чаще у людей с ВНЧС)';
+                }
+                document.getElementById('obcInterpretation').textContent = obcInterpretation;
+                
+                // Показать результаты
+                document.getElementById('results').style.display = 'block';
+                
+                // Прокрутка к результатам
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+            }
         });
     </script>
 </body>
