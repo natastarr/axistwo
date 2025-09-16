@@ -2263,10 +2263,10 @@
                     
                     // Интерпретация JFLS-8
                     let jfls8Interpretation = '';
-                    if (jfls8Score < 0.14) {
-                        jfls8Interpretation = 'Нормальное функционирование челюсти (значение для людей без ВНЧС: 0.13)';
+                    if (jfls8Score < 0.16) {
+                        jfls8Interpretation = 'Нормальное функционирование челюсти (значение для людей без ВНЧС: 0.16)';
                     } else {
-                        jfls8Interpretation = 'Ограничение функции челюсти (значение для людей с хроническим ВНЧС: 2.22)';
+                        jfls8Interpretation = 'Ограничение функции челюсти (значение для людей с хроническим ВНЧС: 1.74)';
                     }
                     document.getElementById('jfls8Interpretation').textContent = jfls8Interpretation;
                 }
@@ -2353,7 +2353,7 @@
                     // Интерпретация JFLS-20
                     let jfls20Interpretation = '';
                     if (jfls20GlobalScore < 0.16) {
-                        jfls20Interpretation = 'Нормальное функционирование челюсти (значение для людей без ВНЧС: 0.14)';
+                        jfls20Interpretation = 'Нормальное функционирование челюсти (значение для людей без ВНЧС: 0.16)';
                     } else {
                         jfls20Interpretation = 'Ограничение функции челюсти (значение для людей с хроническим ВНЧС: 1.74)';
                     }
