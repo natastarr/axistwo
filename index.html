@@ -180,6 +180,67 @@
             font-size: 0.9em;
             margin-top: 5px;
         }
+
+        .pain-drawing {
+            margin: 20px 0;
+        }
+
+        .drawing-tools {
+            margin: 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .tool-btn {
+            padding: 8px 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .tool-btn.active {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .color-picker, .brush-size {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .color-picker label, .brush-size label {
+            margin-right: 5px;
+        }
+
+        .canvas-container {
+            max-width: 100%;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        #pain-canvas {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            background-color: #f9f9f9;
+            cursor: crosshair;
+        }
+
+        .canvas-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 0 50px;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
@@ -191,13 +252,41 @@
             <h2>1. Рисунок боли</h2>
             <p><strong>Инструкция</strong>: Укажите на рисунках локализацию ВСЕХ видов боли, закрасив соответствующие области. Если боль локализована в определённой точке, обозначьте её видимой точкой (•). Если боль мигрирует из одной области в другую, укажите её местоположение стрелками.</p>
             
-            <div class="pain-drawing">
-                <p>Примечание: В онлайн-версии вместо рисования, пожалуйста, укажите количество болевых зон</p>
-                <div class="pain-count">
-                    <label for="painZones">Количество болевых зон:</label>
-                    <input type="number" id="painZones" name="painZones" min="0" max="20" value="0">
+        <div class="pain-drawing">
+            <h3>Локализация боли</h3>
+            <p><strong>Инструкция:</strong> Укажите на рисунках локализацию ВСЕХ видов боли. Используйте кнопки ниже для выбора типа отметки.</p>
+            
+            <div class="drawing-tools">
+                <button type="button" class="tool-btn active" id="point-tool">Точка боли</button>
+                <button type="button" class="tool-btn" id="arrow-tool">Мигрирующая боль (стрелка)</button>
+                <button type="button" class="tool-btn" id="clear-all">Очистить все</button>
+                <div class="color-picker">
+                    <label for="brush-color">Цвет:</label>
+                    <input type="color" id="brush-color" value="#ff0000">
+                </div>
+                <div class="brush-size">
+                    <label for="brush-size">Размер:</label>
+                    <input type="range" id="brush-size" min="1" max="20" value="5">
                 </div>
             </div>
+            
+            <div class="canvas-container">
+                <canvas id="pain-canvas" width="800" height="600"></canvas>
+                <div class="canvas-labels">
+                    <span>Правая сторона лица</span>
+                    <span>Рот и зубы</span>
+                    <span>Левая сторона лица</span>
+                </div>
+            </div>
+            
+            <div class="pain-count">
+                <p class="note">Внимательно проверьте количество болевых зон, при необходимости измените число на верное:</p>
+                <label for="painZones">Количество болевых зон:</label>
+                <input type="number" id="painZones" name="painZones" min="0" max="20" value="0">
+            </div>
+            
+            
+            <input type="hidden" id="pain-drawing-data" name="painDrawingData">
         </div>
 
         
@@ -1219,7 +1308,6 @@
                     <div class="scale-item">10</div>
                 </div>
             </div>
-            
             <div class="question">
                 <p>16. Сделать сердитое лицо</p>
                 <div class="scale-labels">
@@ -1997,6 +2085,7 @@
         <div class="result-item">
             <h3>3. Шкала ограничения функции нижней челюсти-8 (JFLS-8)</h3>
             <p>Общий балл: <span id="jfls8Result"></span>/10</p>
+            <p class="interpretation" id="jfls8Interpretation"></p>
         </div>
         
         <div class="result-item">
@@ -2006,6 +2095,7 @@
             <p>Вербальное и эмоциональное общение: <span id="jfls20CommunicationResult"></span>/10</p>
             <p>Глобальная (общая) оценка: <span id="jfls20GlobalResult"></span>/10</p>
             <p>Эквивалент JFLS-8: <span id="jfls20Equivalent8Result"></span>/10</p>
+            <p class="interpretation" id="jfls20Interpretation"></p>
         </div>
         
         <div class="result-item">
@@ -2052,15 +2142,9 @@
                 
                 let painZonesInterpretation = '';
                 if (painZones === 0) {
-                    painZonesInterpretation = 'Нет боли';
-                } else if (painZones === 1) {
-                    painZonesInterpretation = 'Незначительная боль';
-                } else if (painZones >= 2 && painZones <= 3) {
-                    painZonesInterpretation = 'Умеренная боль';
-                } else if (painZones >= 4 && painZones <= 5) {
-                    painZonesInterpretation = 'Сильная боль';
-                } else {
-                    painZonesInterpretation = 'Очень сильная, распространенная боль';
+                    painZonesInterpretation = 'Нет болевых зон';
+                } else if (painZones >= 1) {
+                    painZonesInterpretation = 'Каждый участок тела, отмеченный болью, увеличивает риск развития другого болевого расстройства, а также хронической боли';
                 }
                 document.getElementById('painZonesInterpretation').textContent = painZonesInterpretation;
                 
@@ -2171,10 +2255,20 @@
                 // Проверяем, что пропущено не более 2 элементов
                 if (jfls8MissingCount > 2) {
                     document.getElementById('jfls8Result').textContent = "Пропущено более 2 элементов";
+                    document.getElementById('jfls8Interpretation').textContent = "";
                 } else {
                     const jfls8Sum = jfls8Values.reduce((acc, val) => acc + val, 0);
                     const jfls8Score = Math.round((jfls8Sum / (8 - jfls8MissingCount)) * 10) / 10;
                     document.getElementById('jfls8Result').textContent = jfls8Score;
+                    
+                    // Интерпретация JFLS-8
+                    let jfls8Interpretation = '';
+                    if (jfls8Score < 0.14) {
+                        jfls8Interpretation = 'Нормальное функционирование челюсти (значение для людей без ВНЧС: 0.13)';
+                    } else {
+                        jfls8Interpretation = 'Ограничение функции челюсти (значение для людей с хроническим ВНЧС: 2.22)';
+                    }
+                    document.getElementById('jfls8Interpretation').textContent = jfls8Interpretation;
                 }
                 
                 // 4. Шкала ограничения функции нижней челюсти-20 (JFLS-20)
@@ -2255,8 +2349,18 @@
                     
                     const jfls20GlobalScore = Math.round(((jfls20ChewingScore + jfls20MobilityScore + jfls20CommunicationScore) / 3) * 10) / 10;
                     document.getElementById('jfls20GlobalResult').textContent = jfls20GlobalScore;
+                    
+                    // Интерпретация JFLS-20
+                    let jfls20Interpretation = '';
+                    if (jfls20GlobalScore < 0.16) {
+                        jfls20Interpretation = 'Нормальное функционирование челюсти (значение для людей без ВНЧС: 0.14)';
+                    } else {
+                        jfls20Interpretation = 'Ограничение функции челюсти (значение для людей с хроническим ВНЧС: 1.74)';
+                    }
+                    document.getElementById('jfls20Interpretation').textContent = jfls20Interpretation;
                 } else {
                     document.getElementById('jfls20GlobalResult').textContent = "Невозможно рассчитать";
+                    document.getElementById('jfls20Interpretation').textContent = "";
                 }
                 
                 // Эквивалент JFLS-8 (пункты 1, 3, 6, 10, 11, 12, 13, 19)
@@ -2528,6 +2632,172 @@
                 document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
             }
         });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const canvas = document.getElementById('pain-canvas');
+    const ctx = canvas.getContext('2d');
+    const pointToolBtn = document.getElementById('point-tool');
+    const arrowToolBtn = document.getElementById('arrow-tool');
+    const clearAllBtn = document.getElementById('clear-all');
+    const colorPicker = document.getElementById('brush-color');
+    const brushSize = document.getElementById('brush-size');
+    const painZonesInput = document.getElementById('painZones');
+    const painDrawingDataInput = document.getElementById('pain-drawing-data');
+    
+    let currentTool = 'point';
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+    let markCount = 0;
+    let arrowStartX, arrowStartY;
+    
+    // Загрузка фонового изображения
+    const backgroundImage = new Image();
+    backgroundImage.src = 'картинка.png'; // Путь к вашему изображению
+    
+    backgroundImage.onload = function() {
+        // Подгоняем размер canvas под размер изображения
+        canvas.width = backgroundImage.width;
+        canvas.height = backgroundImage.height;
+        
+        // Рисуем изображение на canvas
+        ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+        
+        // Сохраняем начальное состояние
+        saveCanvasState();
+    };
+    
+    // Функция для сохранения текущего состояния canvas
+    function saveCanvasState() {
+        painDrawingDataInput.value = canvas.toDataURL('image/png');
+    }
+    
+    // Переключение между инструментами
+    function setActiveTool(tool) {
+        currentTool = tool;
+        
+        // Удаление класса active со всех кнопок
+        document.querySelectorAll('.tool-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Добавление класса active к выбранной кнопке
+        switch(tool) {
+            case 'point':
+                pointToolBtn.classList.add('active');
+                canvas.style.cursor = 'pointer';
+                break;
+            case 'arrow':
+                arrowToolBtn.classList.add('active');
+                canvas.style.cursor = 'crosshair';
+                break;
+        }
+    }
+    
+    // Обработчики нажатий на кнопки инструментов
+    pointToolBtn.addEventListener('click', () => setActiveTool('point'));
+    arrowToolBtn.addEventListener('click', () => setActiveTool('arrow'));
+    
+    clearAllBtn.addEventListener('click', () => {
+        // Очищаем canvas и перерисовываем фоновое изображение
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+        markCount = 0;
+        painZonesInput.value = markCount;
+        saveCanvasState();
+    });
+    
+    // Получение точных координат относительно canvas с учетом масштабирования
+    function getCanvasCoordinates(event) {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+        
+        return {
+            x: (event.clientX - rect.left) * scaleX,
+            y: (event.clientY - rect.top) * scaleY
+        };
+    }
+    
+    // Рисование точки
+    function drawPoint(x, y) {
+        ctx.beginPath();
+        ctx.arc(x, y, parseInt(brushSize.value), 0, Math.PI * 2);
+        ctx.fillStyle = colorPicker.value;
+        ctx.fill();
+    }
+    
+    // Рисование стрелки
+    function drawArrow(fromX, fromY, toX, toY) {
+        // Рисуем линию
+        ctx.beginPath();
+        ctx.moveTo(fromX, fromY);
+        ctx.lineTo(toX, toY);
+        ctx.strokeStyle = colorPicker.value;
+        ctx.lineWidth = parseInt(brushSize.value);
+        ctx.stroke();
+        
+        // Рисуем наконечник стрелки
+        const headlen = 15; // длина наконечника стрелки
+        const angle = Math.atan2(toY - fromY, toX - fromX);
+        
+        ctx.beginPath();
+        ctx.moveTo(toX, toY);
+        ctx.lineTo(toX - headlen * Math.cos(angle - Math.PI/6), toY - headlen * Math.sin(angle - Math.PI/6));
+        ctx.lineTo(toX - headlen * Math.cos(angle + Math.PI/6), toY - headlen * Math.sin(angle + Math.PI/6));
+        ctx.closePath();
+        ctx.fillStyle = colorPicker.value;
+        ctx.fill();
+    }
+    
+    // Обработчик нажатия мыши
+    canvas.addEventListener('mousedown', function(event) {
+        const coords = getCanvasCoordinates(event);
+        isDrawing = true;
+        lastX = coords.x;
+        lastY = coords.y;
+        
+        if (currentTool === 'point') {
+            drawPoint(coords.x, coords.y);
+            markCount++;
+            painZonesInput.value = markCount;
+            saveCanvasState();
+        } else if (currentTool === 'arrow') {
+            arrowStartX = coords.x;
+            arrowStartY = coords.y;
+        }
+    });
+    
+    // Обработчик движения мыши
+    canvas.addEventListener('mousemove', function(event) {
+        if (!isDrawing) return;
+    });
+    
+    // Обработчик отпускания кнопки мыши
+    canvas.addEventListener('mouseup', function(event) {
+        if (!isDrawing) return;
+        
+        const coords = getCanvasCoordinates(event);
+        
+        if (currentTool === 'arrow') {
+            drawArrow(arrowStartX, arrowStartY, coords.x, coords.y);
+            markCount++;
+            painZonesInput.value = markCount;
+        }
+        
+        isDrawing = false;
+        saveCanvasState();
+    });
+    
+    // Обработчик выхода мыши за пределы canvas
+    canvas.addEventListener('mouseout', function() {
+        isDrawing = false;
+    });
+    
+    // Инициализация активного инструмента
+    setActiveTool('point');
+});
+
     </script>
 </body>
 </html>
