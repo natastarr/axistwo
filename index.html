@@ -244,22 +244,22 @@
     </style>
 </head>
 <body>
-    <h1>Анкета DC/TMD: Ось II</h1>
+    <h1>Questionario DC/TMD: Asse II</h1>
     
     <form id="tmdForm">
         
         <div id="section1" class="section">
-            <h2>1. Рисунок боли</h2>
-            <p><strong>Инструкция</strong>: Укажите на рисунках локализацию ВСЕХ видов боли, поставив точку в соответствующей области.</p>
+            <h2>1. Disegno del dolore</h2>
+            <p><strong>Istruzione</strong>: Indicare nei disegni la localizzazione di TUTTI i tipi di dolore, mettendo un punto nell'area corrispondente.</p>
             
         <div class="pain-drawing">
-            <h3>Локализация боли</h3>
+            <h3>Localizzazione del dolore</h3>
             
         <div class="drawing-tools">
-            <button type="button" class="tool-btn active" id="point-tool">Точка боли</button>
-            <button type="button" class="tool-btn" id="clear-all">Очистить все</button>
+            <button type="button" class="tool-btn active" id="point-tool">Punto di dolore</button>
+            <button type="button" class="tool-btn" id="clear-all">Cancella tutto</button>
             <div class="brush-size">
-                <label for="brush-size">Размер:</label>
+                <label for="brush-size">Dimensione:</label>
                 <input type="range" id="brush-size" min="1" max="20" value="5">
             </div>
         </div>
@@ -267,15 +267,15 @@
             <div class="canvas-container">
                 <canvas id="pain-canvas" width="800" height="600"></canvas>
                 <div class="canvas-labels">
-                    <span>Правая сторона лица</span>
-                    <span>Рот и зубы</span>
-                    <span>Левая сторона лица</span>
+                    <span>Lato destro del viso</span>
+                    <span>Bocca e denti</span>
+                    <span>Lato sinistro del viso</span>
                 </div>
             </div>
             
             <div class="pain-count">
-                <p class="note">Внимательно проверьте количество болевых зон, при необходимости измените число на верное:</p>
-                <label for="painZones">Количество болевых зон:</label>
+                <p class="note">Controllare attentamente il numero di zone dolorose, se necessario modificare il numero a quello corretto:</p>
+                <label for="painZones">Numero di zone dolorose:</label>
                 <input type="number" id="painZones" name="painZones" min="0" max="20" value="0">
             </div>
             
@@ -285,19 +285,19 @@
 
         
         <div id="section2" class="section">
-            <h2>2. Шкала хронической боли (GCPS версия 2.0)</h2>
+            <h2>2. Scala del dolore cronico (GCPS versione 2.0)</h2>
             
             <div class="question">
-                <label for="painDays">1. Сколько дней за последние 6 месяцев Вы испытывали лицевую боль?</label>
+                <label for="painDays">1. Per quanti giorni negli ultimi 6 mesi ha provato dolore facciale?</label>
                 <input type="number" id="painDays" name="painDays" min="0" max="180">
-                <span>Дней</span>
+                <span>Giorni</span>
             </div>
             
             <div class="question">
-                <p>2. Насколько интенсивна Ваша лицевая боль ПРЯМО СЕЙЧАС? Оцените по шкале от 0 до 10, где 0 соответствует «отсутствию боли», а 10 соответствует «самой сильной боли, которая может существовать».</p>
+                <p>2. Quanto è intenso il Suo dolore facciale ADESSO? Valuti su una scala da 0 a 10, dove 0 corrisponde a "nessun dolore" e 10 corrisponde al "dolore più forte che può esistere".</p>
                 <div class="scale-labels">
-                    <span>Никакой боли</span>
-                    <span>Самая сильная боль, которая может быть</span>
+                    <span>Nessun dolore</span>
+                    <span>Il dolore più forte che può esistere</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="currentPain0" name="currentPain" value="0">
@@ -328,10 +328,10 @@
             </div>
             
             <div class="question">
-                <p>3. Какую самую сильную боль в лице Вы испытывали за последние 30 дней? Используйте ту же шкалу, где 0 — «нет боли», а 10 — «самая сильная боль в жизни».</p>
+                <p>3. Qual è stato il dolore facciale più forte che ha provato negli ultimi 30 giorni? Usi la stessa scala, dove 0 è "nessun dolore" e 10 è "il dolore più forte della vita".</p>
                 <div class="scale-labels">
-                    <span>Никакой боли</span>
-                    <span>Самая сильная боль, которая может быть</span>
+                    <span>Nessun dolore</span>
+                    <span>Il dolore più forte che può esistere</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="worstPain0" name="worstPain" value="0">
@@ -362,10 +362,10 @@
             </div>
             
             <div class="question">
-                <p>4. Какова была средняя интенсивность Вашей лицевой боли за последние 30 дней? Используйте ту же шкалу, где 0 соответствует «отсутствию боли», а 10 соответствует «самой сильной боли, которая может существовать». [То есть вашей обычной боли, когда Вы испытываете боль]</p>
+                <p>4. Qual è stata l'intensità media del Suo dolore facciale negli ultimi 30 giorni? Usi la stessa scala, dove 0 corrisponde a "nessun dolore" e 10 corrisponde al "dolore più forte che può esistere". [Cioè il Suo dolore abituale quando prova dolore]</p>
                 <div class="scale-labels">
-                    <span>Никакой боли</span>
-                    <span>Самая сильная боль, которая может быть</span>
+                    <span>Nessun dolore</span>
+                    <span>Il dolore più forte che può esistere</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="averagePain0" name="averagePain" value="0">
@@ -396,16 +396,16 @@
             </div>
             
             <div class="question">
-                <label for="disabilityDays">5. ЗА ПОСЛЕДНИЕ 30 ДНЕЙ, сколько дней лицевая боль мешала Вам заниматься ОБЫЧНЫМИ делами, такими как работа, учеба или домашние дела?</label>
+                <label for="disabilityDays">5. NEGLI ULTIMI 30 GIORNI, per quanti giorni il dolore facciale Le ha impedito di svolgere le Sue NORMALI attività, come lavoro, studio o faccende domestiche?</label>
                 <input type="number" id="disabilityDays" name="disabilityDays" min="0" max="30">
-                <span>Дней</span>
+                <span>Giorni</span>
             </div>
             
             <div class="question">
-                <p>6. В течение ПОСЛЕДНИХ 30 ДНЕЙ насколько сильно лицевая боль мешала Вашей ПОВСЕДНЕВНОЙ ДЕЯТЕЛЬНОСТИ? Пожалуйста, используйте шкалу от 0 до 10, где 0 соответствует «отсутствию помех», а 10 соответствует «невозможности выполнять какую-либо деятельность».</p>
+                <p>6. Negli ULTIMI 30 GIORNI, quanto il dolore facciale ha interferito con le Sue ATTIVITÀ QUOTIDIANE? Utilizzi una scala da 0 a 10, dove 0 corrisponde a "nessuna interferenza" e 10 corrisponde a "impossibilità di svolgere qualsiasi attività".</p>
                 <div class="scale-labels">
-                    <span>Никаких помех</span>
-                    <span>Невозможно выполнить какую-либо деятельность</span>
+                    <span>Nessuna interferenza</span>
+                    <span>Impossibilità di svolgere qualsiasi attività</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="dailyInterference0" name="dailyInterference" value="0">
@@ -436,10 +436,10 @@
             </div>
             
             <div class="question">
-                <p>7. Насколько сильно боль в лице мешала Вам заниматься своими делами, общаться с людьми и заниматься семейной деятельностью за последние 30 дней? Используйте ту же шкалу, где 0 соответствует «никаких помех», а 10 — «невозможность заниматься какой-либо деятельностью».</p>
+                <p>7. Quanto il dolore facciale ha interferito con le Sue attività sociali, con le persone e con le attività familiari negli ultimi 30 giorni? Usi la stessa scala, dove 0 corrisponde a "nessuna interferenza" e 10 a "impossibilità di svolgere qualsiasi attività".</p>
                 <div class="scale-labels">
-                    <span>Никаких помех</span>
-                    <span>Невозможно выполнить какую-либо деятельность</span>
+                    <span>Nessuna interferenza</span>
+                    <span>Impossibilità di svolgere qualsiasi attività</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="socialInterference0" name="socialInterference" value="0">
@@ -470,10 +470,10 @@
             </div>
             
             <div class="question">
-                <p>8. В ПОСЛЕДНИЕ 30 ДНЕЙ насколько сильно лицевая боль мешала Вашей РАБОТОСПОСОБНОСТИ? Включая работу по дому? Используйте ту же шкалу, где 0 соответствует «отсутствию помех», а 10 — «невозможности выполнять какую-либо деятельность».</p>
+                <p>8. NEGLI ULTIMI 30 GIORNI, quanto il dolore facciale ha interferito con la Sua CAPACITÀ LAVORATIVA? Incluso il lavoro domestico? Usi la stessa scala, dove 0 corrisponde a "nessuna interferenza" e 10 a "impossibilità di svolgere qualsiasi attività".</p>
                 <div class="scale-labels">
-                    <span>Никаких помех</span>
-                    <span>Невозможно выполнить какую-либо деятельность</span>
+                    <span>Nessuna interferenza</span>
+                    <span>Impossibilità di svolgere qualsiasi attività</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="workInterference0" name="workInterference" value="0">
@@ -506,14 +506,14 @@
 
         
         <div id="section3" class="section">
-            <h2>3. Шкала ограничения функции нижней челюсти-8 (JFLS-8)</h2>
-            <p><strong>Инструкция</strong>: Для каждого пункта ниже укажите степень ограничения за последний месяц. Если Вы полностью избегали функции (работы) нижней челюсти из-за сложности, обведите 10. Если Вы избегали данной функции по причинам, не связанным с болью или трудностями, оставьте пункт пустым.</p>
+            <h2>3. Scala di limitazione funzionale mandibolare-8 (JFLS-8)</h2>
+            <p><strong>Istruzione</strong>: Per ciascuna voce sottostante, indichi il grado di limitazione nell'ultimo mese. Se ha completamente evitato la funzione (attività) della mandibola a causa della difficoltà, cerchi 10. Se ha evitato questa funzione per motivi non legati al dolore o alle difficoltà, lasci la voce vuota.</p>
             
             <div class="question">
-                <p>1. Пережевывание жесткой пищи</p>
+                <p>1. Masticare cibi duri</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls1_0" name="jfls1" value="0">
@@ -544,10 +544,10 @@
             </div>
             
             <div class="question">
-                <p>2. Пережевывание курицы (например, запеченной в духовке)</p>
+                <p>2. Masticare pollo (ad esempio, cotto al forno)</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls2_0" name="jfls2" value="0">
@@ -578,10 +578,10 @@
             </div>
             
             <div class="question">
-                <p>3. Употребление мягкой пищи, не требующей пережевывания (например, картофельного пюре, джемов, соусов, пудингов, смузи)</p>
+                <p>3. Consumare cibi morbidi che non richiedono masticazione (ad esempio, purè di patate, marmellate, salse, budini, frullati)</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls3_0" name="jfls3" value="0">
@@ -612,10 +612,10 @@
             </div>
             
             <div class="question">
-                <p>4. Открывание рта достаточно широко (например, пить из чашки)</p>
+                <p>4. Aprire la bocca abbastanza ampiamente (ad esempio, per bere da una tazza)</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls4_0" name="jfls4" value="0">
@@ -646,10 +646,10 @@
             </div>
             
             <div class="question">
-                <p>5. Глотать</p>
+                <p>5. Deglutire</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls5_0" name="jfls5" value="0">
@@ -680,10 +680,10 @@
             </div>
             
             <div class="question">
-                <p>6. Зевать</p>
+                <p>6. Sbadigliare</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls6_0" name="jfls6" value="0">
@@ -714,10 +714,10 @@
             </div>
             
             <div class="question">
-                <p>7. Говорить</p>
+                <p>7. Parlare</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls7_0" name="jfls7" value="0">
@@ -748,10 +748,10 @@
             </div>
             
             <div class="question">
-                <p>8. Улыбка</p>
+                <p>8. Sorridere</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls8_0" name="jfls8" value="0">
@@ -784,14 +784,14 @@
 
         
         <div id="section4" class="section">
-            <h2>4. Шкала ограничения функции нижней челюсти (JFLS-20)</h2>
-            <p><strong>Инструкция</strong>: Для каждого пункта ниже укажите степень ограничения за последний месяц. Если Вы полностью избегали занятия из-за его сложности, обведите 10. Если Вы избегали занятия по причинам, не связанным с болью или трудностями, оставьте пункт пустым.</p>
+            <h2>4. Scala di limitazione funzionale mandibolare (JFLS-20)</h2>
+            <p><strong>Istruzione</strong>: Per ciascuna voce sottostante, indichi il grado di limitazione nell'ultimo mese. Se ha completamente evitato l'attività a causa della sua difficoltà, cerchi 10. Se ha evitato l'attività per motivi non legati al dolore o alle difficoltà, lasci la voce vuota.</p>
             
             <div class="question">
-                <p>1. Пережевывание жесткой пищи</p>
+                <p>1. Masticare cibi duri</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_1_0" name="jfls20_1" value="0">
@@ -822,10 +822,10 @@
             </div>
             
             <div class="question">
-                <p>2. Жевание твердого хлеба</p>
+                <p>2. Masticare pane duro</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_2_0" name="jfls20_2" value="0">
@@ -856,10 +856,10 @@
             </div>
             
             <div class="question">
-                <p>3. Жевание курицы (например, приготовленной в духовке)</p>
+                <p>3. Masticare pollo (ad esempio, cotto al forno)</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_3_0" name="jfls20_3" value="0">
@@ -891,10 +891,10 @@
             
             
             <div class="question">
-                <p>4. Жевание крекеров</p>
+                <p>4. Masticare cracker</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_4_0" name="jfls20_4" value="0">
@@ -925,10 +925,10 @@
             </div>
             
             <div class="question">
-                <p>5. Жевание мягкой пищи (например, макароны, мягкие или консервированные фрукты, вареные овощи, рыба)</p>
+                <p>5. Masticare cibi morbidi (ad esempio, pasta, frutta morbida o in scatola, verdure cotte, pesce)</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_5_0" name="jfls20_5" value="0">
@@ -962,10 +962,10 @@
             
             
             <div class="question">
-                <p>6. Употребление мягкой пищи, не требующей пережевывания (например, картофельного пюре, джемов, соусов, пудингов, смузи)</p>
+                <p>6. Consumare cibi morbidi che non richiedono masticazione (ad esempio, purè di patate, marmellate, salse, budini, frullati)</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_6_0" name="jfls20_6" value="0">
@@ -996,10 +996,10 @@
             </div>
             
             <div class="question">
-                <p>7. Откройте рот достаточно широко, чтобы откусить целое яблоко</p>
+                <p>7. Aprire la bocca abbastanza ampiamente per mordere una mela intera</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_7_0" name="jfls20_7" value="0">
@@ -1031,10 +1031,10 @@
             
             
             <div class="question">
-                <p>8. Откройте рот достаточно широко, чтобы откусить кусочек сэндвича</p>
+                <p>8. Aprire la bocca abbastanza ampiamente per mordere un pezzo di sandwich</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_8_0" name="jfls20_8" value="0">
@@ -1065,10 +1065,10 @@
             </div>
             
             <div class="question">
-                <p>9. Откройте рот достаточно широко для разговора</p>
+                <p>9. Aprire la bocca abbastanza ampiamente per parlare</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_9_0" name="jfls20_9" value="0">
@@ -1099,10 +1099,10 @@
             </div>
             
             <div class="question">
-                <p>10. Откройте рот достаточно широко, чтобы пить из чашки</p>
+                <p>10. Aprire la bocca abbastanza ampiamente per bere da una tazza</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_10_0" name="jfls20_10" value="0">
@@ -1134,10 +1134,10 @@
             
             
             <div class="question">
-                <p>11. Глотать</p>
+                <p>11. Deglutire</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_11_0" name="jfls20_11" value="0">
@@ -1168,10 +1168,10 @@
             </div>
             
             <div class="question">
-                <p>12. Зевать</p>
+                <p>12. Sbadigliare</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_12_0" name="jfls20_12" value="0">
@@ -1202,10 +1202,10 @@
             </div>
             
             <div class="question">
-                <p>13. Говорить</p>
+                <p>13. Parlare</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_13_0" name="jfls20_13" value="0">
@@ -1236,10 +1236,10 @@
             </div>
             
             <div class="question">
-                <p>14. Петь</p>
+                <p>14. Cantare</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_14_0" name="jfls20_14" value="0">
@@ -1270,10 +1270,10 @@
             </div>
             
             <div class="question">
-                <p>15. Сделать счастливое лицо</p>
+                <p>15. Fare una faccia felice</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_15_0" name="jfls20_15" value="0">
@@ -1303,10 +1303,10 @@
                 </div>
             </div>
             <div class="question">
-                <p>16. Сделать сердитое лицо</p>
+                <p>16. Fare una faccia arrabbiata</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_16_0" name="jfls20_16" value="0">
@@ -1337,10 +1337,10 @@
             </div>
             
             <div class="question">
-                <p>17. Нахмурить брови</p>
+                <p>17. Aggrottare le sopracciglia</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_17_0" name="jfls20_17" value="0">
@@ -1371,10 +1371,10 @@
             </div>
             
             <div class="question">
-                <p>18. Целовать</p>
+                <p>18. Baciare</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_18_0" name="jfls20_18" value="0">
@@ -1405,10 +1405,10 @@
             </div>
             
             <div class="question">
-                <p>19. Улыбаться</p>
+                <p>19. Sorridere</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_19_0" name="jfls20_19" value="0">
@@ -1439,10 +1439,10 @@
             </div>
             
             <div class="question">
-                <p>20. Смеяться</p>
+                <p>20. Ridere</p>
                 <div class="scale-labels">
-                    <span>Никакого ограничения</span>
-                    <span>Серьезное ограничение</span>
+                    <span>Nessuna limitazione</span>
+                    <span>Grave limitazione</span>
                 </div>
                 <div class="scale">
                     <input type="radio" id="jfls20_20_0" name="jfls20_20" value="0">
@@ -1475,44 +1475,44 @@
 
         
         <div id="section5" class="section">
-            <h2>5. Анкета здоровья пациента (PHQ-4)</h2>
-            <p><strong>Инструкция</strong>: Как часто за последние 2 недели Вас беспокоили следующие проблемы? Пожалуйста, отметьте галочкой вариант ответа.</p>
+            <h2>5. Questionario sulla salute del paziente (PHQ-4)</h2>
+            <p><strong>Istruzione</strong>: Con quale frequenza è stato disturbato dai seguenti problemi nelle ultime 2 settimane? Si prega di contrassegnare con un segno di spunta la risposta.</p>
             
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Нисколько (0)</th>
-                            <th>Несколько дней (1)</th>
-                            <th>Более половины срока (2)</th>
-                            <th>Почти каждый день (3)</th>
+                            <th>Per niente (0)</th>
+                            <th>Alcuni giorni (1)</th>
+                            <th>Più della metà dei giorni (2)</th>
+                            <th>Quasi ogni giorno (3)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1. Чувство нервозности, беспокойства или напряжения</td>
+                            <td>1. Sensazione di nervosismo, ansia o tensione</td>
                             <td><input type="radio" name="phq4_1" value="0"></td>
                             <td><input type="radio" name="phq4_1" value="1"></td>
                             <td><input type="radio" name="phq4_1" value="2"></td>
                             <td><input type="radio" name="phq4_1" value="3"></td>
                         </tr>
                         <tr>
-                            <td>2. Неспособность остановить или контролировать беспокойство</td>
+                            <td>2. Incapacità di fermare o controllare le preoccupazioni</td>
                             <td><input type="radio" name="phq4_2" value="0"></td>
                             <td><input type="radio" name="phq4_2" value="1"></td>
                             <td><input type="radio" name="phq4_2" value="2"></td>
                             <td><input type="radio" name="phq4_2" value="3"></td>
                         </tr>
                         <tr>
-                            <td>3. Небольшой интерес или удовольствие от выполнения каких-либо действий</td>
+                            <td>3. Scarso interesse o piacere nel fare le cose</td>
                             <td><input type="radio" name="phq4_3" value="0"></td>
                             <td><input type="radio" name="phq4_3" value="1"></td>
                             <td><input type="radio" name="phq4_3" value="2"></td>
                             <td><input type="radio" name="phq4_3" value="3"></td>
                         </tr>
                         <tr>
-                            <td>4. Чувство подавленности, депрессии или безнадежности</td>
+                            <td>4. Sentirsi giù, depresso o senza speranza</td>
                             <td><input type="radio" name="phq4_4" value="0"></td>
                             <td><input type="radio" name="phq4_4" value="1"></td>
                             <td><input type="radio" name="phq4_4" value="2"></td>
@@ -1522,100 +1522,100 @@
                 </table>
             </div>
             
-            <p>Если Вы столкнулись с какими-либо из этих проблем, насколько они мешали вам выполнять свою работу, заниматься домашними делами и общаться с другими людьми?</p>
+            <p>Se ha riscontrato qualcuno di questi problemi, quanto hanno reso difficile svolgere il Suo lavoro, occuparsi delle cose a casa o relazionarsi con altre persone?</p>
             <div>
                 <input type="radio" id="phq4_difficulty_none" name="phq4_difficulty" value="0">
-                <label for="phq4_difficulty_none">Совсем не сложно</label>
+                <label for="phq4_difficulty_none">Nessuna difficoltà</label>
             </div>
             <div>
                 <input type="radio" id="phq4_difficulty_mild" name="phq4_difficulty" value="1">
-                <label for="phq4_difficulty_mild">Немного сложно</label>
+                <label for="phq4_difficulty_mild">Qualche difficoltà</label>
             </div>
             <div>
                 <input type="radio" id="phq4_difficulty_moderate" name="phq4_difficulty" value="2">
-                <label for="phq4_difficulty_moderate">Очень сложно</label>
+                <label for="phq4_difficulty_moderate">Molta difficoltà</label>
             </div>
             <div>
                 <input type="radio" id="phq4_difficulty_severe" name="phq4_difficulty" value="3">
-                <label for="phq4_difficulty_severe">Очень сильно сложно</label>
+                <label for="phq4_difficulty_severe">Estrema difficoltà</label>
             </div>
         </div>
 
         
         <div id="section6" class="section">
-            <h2>6. Анкета здоровья пациента (PHQ-9)</h2>
-            <p><strong>Инструкция</strong>: Как часто за последние 2 недели Вас беспокоили следующие проблемы? Пожалуйста, отметьте галочкой вариант ответа.</p>
+            <h2>6. Questionario sulla salute del paziente (PHQ-9)</h2>
+            <p><strong>Istruzione</strong>: Con quale frequenza è stato disturbato dai seguenti problemi nelle ultime 2 settimane? Si prega di contrassegnare con un segno di spunta la risposta.</p>
             
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Нисколько (0)</th>
-                            <th>Несколько дней (1)</th>
-                            <th>Более половины срока (2)</th>
-                            <th>Почти каждый день (3)</th>
+                            <th>Per niente (0)</th>
+                            <th>Alcuni giorni (1)</th>
+                            <th>Più della metà dei giorni (2)</th>
+                            <th>Quasi ogni giorno (3)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1. Мало интереса или энтузиазма в какой-либо деятельности</td>
+                            <td>1. Scarso interesse o piacere nel fare le cose</td>
                             <td><input type="radio" name="phq9_1" value="0"></td>
                             <td><input type="radio" name="phq9_1" value="1"></td>
                             <td><input type="radio" name="phq9_1" value="2"></td>
                             <td><input type="radio" name="phq9_1" value="3"></td>
                         </tr>
                         <tr>
-                            <td>2. Чувство подавленности, депрессии или безнадежности</td>
+                            <td>2. Sentirsi giù, depresso o senza speranza</td>
                             <td><input type="radio" name="phq9_2" value="0"></td>
                             <td><input type="radio" name="phq9_2" value="1"></td>
                             <td><input type="radio" name="phq9_2" value="2"></td>
                             <td><input type="radio" name="phq9_2" value="3"></td>
                         </tr>
                         <tr>
-                            <td>3. Проблемы с засыпанием или сном, или слишком много сна</td>
+                            <td>3. Problemi ad addormentarsi o a dormire, o dormire troppo</td>
                             <td><input type="radio" name="phq9_3" value="0"></td>
                             <td><input type="radio" name="phq9_3" value="1"></td>
                             <td><input type="radio" name="phq9_3" value="2"></td>
                             <td><input type="radio" name="phq9_3" value="3"></td>
                         </tr>
                         <tr>
-                            <td>4. Чувство усталости или упадок сил</td>
+                            <td>4. Sentirsi stanco o avere poca energia</td>
                             <td><input type="radio" name="phq9_4" value="0"></td>
                             <td><input type="radio" name="phq9_4" value="1"></td>
                             <td><input type="radio" name="phq9_4" value="2"></td>
                             <td><input type="radio" name="phq9_4" value="3"></td>
                         </tr>
                         <tr>
-                            <td>5. Плохой аппетит или переедание</td>
+                            <td>5. Scarso appetito o alimentazione eccessiva</td>
                             <td><input type="radio" name="phq9_5" value="0"></td>
                             <td><input type="radio" name="phq9_5" value="1"></td>
                             <td><input type="radio" name="phq9_5" value="2"></td>
                             <td><input type="radio" name="phq9_5" value="3"></td>
                         </tr>
                         <tr>
-                            <td>6. Иметь низкое мнение о себе, чувствовать, что вы неудачник или подвели себя или свою семью</td>
+                            <td>6. Avere una scarsa opinione di sé, sentirsi un fallimento o di aver deluso se stessi o la propria famiglia</td>
                             <td><input type="radio" name="phq9_6" value="0"></td>
                             <td><input type="radio" name="phq9_6" value="1"></td>
                             <td><input type="radio" name="phq9_6" value="2"></td>
                             <td><input type="radio" name="phq9_6" value="3"></td>
                         </tr>
                         <tr>
-                            <td>7. Трудности с концентрацией внимания, например, при чтении газеты или просмотра телевизора</td>
+                            <td>7. Difficoltà di concentrazione, ad esempio durante la lettura del giornale o guardando la televisione</td>
                             <td><input type="radio" name="phq9_7" value="0"></td>
                             <td><input type="radio" name="phq9_7" value="1"></td>
                             <td><input type="radio" name="phq9_7" value="2"></td>
                             <td><input type="radio" name="phq9_7" value="3"></td>
                         </tr>
                         <tr>
-                            <td>8. Двигаетесь или говорите так медленно, что это заметно окружающим? Или, наоборот, настолько возбуждены или суетливы, что двигаетесь гораздо больше обычного</td>
+                            <td>8. Muoversi o parlare così lentamente da poter essere notato dagli altri? O, al contrario, essere così agitato o irrequieto da muoversi molto più del solito</td>
                             <td><input type="radio" name="phq9_8" value="0"></td>
                             <td><input type="radio" name="phq9_8" value="1"></td>
                             <td><input type="radio" name="phq9_8" value="2"></td>
                             <td><input type="radio" name="phq9_8" value="3"></td>
                         </tr>
                         <tr>
-                            <td>9. Думать, что было бы лучше умереть или хотеть причинить себе вред</td>
+                            <td>9. Pensare che sarebbe meglio morire o volersi fare del male in qualche modo</td>
                             <td><input type="radio" name="phq9_9" value="0"></td>
                             <td><input type="radio" name="phq9_9" value="1"></td>
                             <td><input type="radio" name="phq9_9" value="2"></td>
@@ -1625,86 +1625,86 @@
                 </table>
             </div>
             
-            <p>Если Вы столкнулись с какими-либо из этих проблем, насколько они мешали вам выполнять свою работу, заниматься домашними делами и общаться с другими людьми?</p>
+            <p>Se ha riscontrato qualcuno di questi problemi, quanto hanno reso difficile svolgere il Suo lavoro, occuparsi delle cose a casa o relazionarsi con altre persone?</p>
             <div>
                 <input type="radio" id="phq9_difficulty_none" name="phq9_difficulty" value="0">
-                <label for="phq9_difficulty_none">Совсем не сложно</label>
+                <label for="phq9_difficulty_none">Nessuna difficoltà</label>
             </div>
             <div>
                 <input type="radio" id="phq9_difficulty_mild" name="phq9_difficulty" value="1">
-                <label for="phq9_difficulty_mild">Немного сложно</label>
+                <label for="phq9_difficulty_mild">Qualche difficoltà</label>
             </div>
             <div>
                 <input type="radio" id="phq9_difficulty_moderate" name="phq9_difficulty" value="2">
-                <label for="phq9_difficulty_moderate">Очень сложно</label>
+                <label for="phq9_difficulty_moderate">Molta difficoltà</label>
             </div>
             <div>
                 <input type="radio" id="phq9_difficulty_severe" name="phq9_difficulty" value="3">
-                <label for="phq9_difficulty_severe">Очень сильно сложно</label>
+                <label for="phq9_difficulty_severe">Estrema difficoltà</label>
             </div>
         </div>
 
         
         <div id="section7" class="section">
-            <h2>7. ГАД-7 (Генерализованное тревожное расстройство)</h2>
-            <p><strong>Инструкция</strong>: Сколько раз за последние две недели Вас беспокоили следующие проблемы? Пожалуйста, отметьте галочкой вариант ответа.</p>
+            <h2>7. GAD-7 (Disturbo d'ansia generalizzato)</h2>
+            <p><strong>Istruzione</strong>: Quante volte nelle ultime due settimane è stato disturbato dai seguenti problemi? Si prega di contrassegnare con un segno di spunta la risposta.</p>
             
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Нисколько (0)</th>
-                            <th>Несколько дней (1)</th>
-                            <th>Более половины срока (2)</th>
-                            <th>Почти каждый день (3)</th>
+                            <th>Per niente (0)</th>
+                            <th>Alcuni giorni (1)</th>
+                            <th>Più della metà dei giorni (2)</th>
+                            <th>Quasi ogni giorno (3)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1. Чувство нервозности, беспокойства или напряжения</td>
+                            <td>1. Sensazione di nervosismo, ansia o tensione</td>
                             <td><input type="radio" name="gad7_1" value="0"></td>
                             <td><input type="radio" name="gad7_1" value="1"></td>
                             <td><input type="radio" name="gad7_1" value="2"></td>
                             <td><input type="radio" name="gad7_1" value="3"></td>
                         </tr>
                         <tr>
-                            <td>2. Неспособность перестать беспокоиться или контролировать беспокойство</td>
+                            <td>2. Incapacità di smettere di preoccuparsi o di controllare le preoccupazioni</td>
                             <td><input type="radio" name="gad7_2" value="0"></td>
                             <td><input type="radio" name="gad7_2" value="1"></td>
                             <td><input type="radio" name="gad7_2" value="2"></td>
                             <td><input type="radio" name="gad7_2" value="3"></td>
                         </tr>
                         <tr>
-                            <td>3. Чрезмерное беспокойство о разных вещах</td>
+                            <td>3. Preoccupazione eccessiva per diverse cose</td>
                             <td><input type="radio" name="gad7_3" value="0"></td>
                             <td><input type="radio" name="gad7_3" value="1"></td>
                             <td><input type="radio" name="gad7_3" value="2"></td>
                             <td><input type="radio" name="gad7_3" value="3"></td>
                         </tr>
                         <tr>
-                            <td>4. Трудности с расслаблением</td>
+                            <td>4. Difficoltà a rilassarsi</td>
                             <td><input type="radio" name="gad7_4" value="0"></td>
                             <td><input type="radio" name="gad7_4" value="1"></td>
                             <td><input type="radio" name="gad7_4" value="2"></td>
                             <td><input type="radio" name="gad7_4" value="3"></td>
                         </tr>
                         <tr>
-                            <td>5. Беспокойство настолько сильное, что становится трудно усидеть на месте</td>
+                            <td>5. Essere così irrequieto che è difficile stare seduti fermi</td>
                             <td><input type="radio" name="gad7_5" value="0"></td>
                             <td><input type="radio" name="gad7_5" value="1"></td>
                             <td><input type="radio" name="gad7_5" value="2"></td>
                             <td><input type="radio" name="gad7_5" value="3"></td>
                         </tr>
                         <tr>
-                            <td>6. Становитесь легко раздражительным или раздраженным</td>
+                            <td>6. Diventare facilmente irritabile o irritato</td>
                             <td><input type="radio" name="gad7_6" value="0"></td>
                             <td><input type="radio" name="gad7_6" value="1"></td>
                             <td><input type="radio" name="gad7_6" value="2"></td>
                             <td><input type="radio" name="gad7_6" value="3"></td>
                         </tr>
                         <tr>
-                            <td>7. Чувство страха, что может случиться что-то ужасное</td>
+                            <td>7. Avere paura che possa succedere qualcosa di terribile</td>
                             <td><input type="radio" name="gad7_7" value="0"></td>
                             <td><input type="radio" name="gad7_7" value="1"></td>
                             <td><input type="radio" name="gad7_7" value="2"></td>
@@ -1714,127 +1714,127 @@
                 </table>
             </div>
             
-            <p>Если Вы столкнулись с какими-либо из этих проблем, насколько они мешали Вам выполнять свою работу, заниматься домашними делами и общаться с другими людьми?</p>
+            <p>Se ha riscontrato qualcuno di questi problemi, quanto hanno reso difficile svolgere il Suo lavoro, occuparsi delle cose a casa o relazionarsi con altre persone?</p>
             <div>
                 <input type="radio" id="gad7_difficulty_none" name="gad7_difficulty" value="0">
-                <label for="gad7_difficulty_none">Совсем не сложно</label>
+                <label for="gad7_difficulty_none">Nessuna difficoltà</label>
             </div>
             <div>
                 <input type="radio" id="gad7_difficulty_mild" name="gad7_difficulty" value="1">
-                <label for="gad7_difficulty_mild">Немного сложно</label>
+                <label for="gad7_difficulty_mild">Qualche difficoltà</label>
             </div>
             <div>
                 <input type="radio" id="gad7_difficulty_moderate" name="gad7_difficulty" value="2">
-                <label for="gad7_difficulty_moderate">Очень сложно</label>
+                <label for="gad7_difficulty_moderate">Molta difficoltà</label>
             </div>
             <div>
                 <input type="radio" id="gad7_difficulty_severe" name="gad7_difficulty" value="3">
-                <label for="gad7_difficulty_severe">Очень сильно сложно</label>
+                <label for="gad7_difficulty_severe">Estrema difficoltà</label>
             </div>
         </div>
 
         
         <div id="section8" class="section">
-            <h2>8. Опросник здоровья пациента – физические симптомы (PHQ-15)</h2>
-            <p><strong>Инструкция</strong>: Насколько сильно Вас беспокоила каждая из перечисленных ниже проблем за последние 4 недели? Пожалуйста, отметьте галочкой вариант ответа.</p>
+            <h2>8. Questionario sulla salute del paziente - sintomi fisici (PHQ-15)</h2>
+            <p><strong>Istruzione</strong>: Quanto è stato disturbato da ciascuno dei seguenti problemi nelle ultime 4 settimane? Si prega di contrassegnare con un segno di spunta la risposta.</p>
             
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Совсем не беспокоили (0)</th>
-                            <th>Немного встревожен (1)</th>
-                            <th>Очень обеспокоен (2)</th>
+                            <th>Per niente disturbato (0)</th>
+                            <th>Un po' disturbato (1)</th>
+                            <th>Molto disturbato (2)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1. Боли в животе</td>
+                            <td>1. Dolori di stomaco</td>
                             <td><input type="radio" name="phq15_1" value="0"></td>
                             <td><input type="radio" name="phq15_1" value="1"></td>
                             <td><input type="radio" name="phq15_1" value="2"></td>
                         </tr>
                         <tr>
-                            <td>2. Боль в спине</td>
+                            <td>2. Mal di schiena</td>
                             <td><input type="radio" name="phq15_2" value="0"></td>
                             <td><input type="radio" name="phq15_2" value="1"></td>
                             <td><input type="radio" name="phq15_2" value="2"></td>
                         </tr>
                         <tr>
-                            <td>3. Боль в руках, ногах или суставах (коленях, бедрах и т. д.)</td>
+                            <td>3. Dolore alle braccia, gambe o articolazioni (ginocchia, anche, ecc.)</td>
                             <td><input type="radio" name="phq15_3" value="0"></td>
                             <td><input type="radio" name="phq15_3" value="1"></td>
                             <td><input type="radio" name="phq15_3" value="2"></td>
                         </tr>
                         <tr>
-                            <td>4. Менструальные спазмы или другие проблемы во время менструации [только для женщин]</td>
+                            <td>4. Crampi mestruali o altri problemi durante le mestruazioni [solo per le donne]</td>
                             <td><input type="radio" name="phq15_4" value="0"></td>
                             <td><input type="radio" name="phq15_4" value="1"></td>
                             <td><input type="radio" name="phq15_4" value="2"></td>
                         </tr>
                         <tr>
-                            <td>5. Головные боли</td>
+                            <td>5. Mal di testa</td>
                             <td><input type="radio" name="phq15_5" value="0"></td>
                             <td><input type="radio" name="phq15_5" value="1"></td>
                             <td><input type="radio" name="phq15_5" value="2"></td>
                         </tr>
                         <tr>
-                            <td>6. Боль в груди</td>
+                            <td>6. Dolore al petto</td>
                             <td><input type="radio" name="phq15_6" value="0"></td>
                             <td><input type="radio" name="phq15_6" value="1"></td>
                             <td><input type="radio" name="phq15_6" value="2"></td>
                         </tr>
                         <tr>
-                            <td>7. Головокружение</td>
+                            <td>7. Vertigini</td>
                             <td><input type="radio" name="phq15_7" value="0"></td>
                             <td><input type="radio" name="phq15_7" value="1"></td>
                             <td><input type="radio" name="phq15_7" value="2"></td>
                         </tr>
                         <tr>
-                            <td>8. Обмороки</td>
+                            <td>8. Svenimenti</td>
                             <td><input type="radio" name="phq15_8" value="0"></td>
                             <td><input type="radio" name="phq15_8" value="1"></td>
                             <td><input type="radio" name="phq15_8" value="2"></td>
                         </tr>
                         <tr>
-                            <td>9. Чувствуете, что Ваше сердце колотится или учащенно бьется</td>
+                            <td>9. Sentire il cuore battere forte o accelerato</td>
                             <td><input type="radio" name="phq15_9" value="0"></td>
                             <td><input type="radio" name="phq15_9" value="1"></td>
                             <td><input type="radio" name="phq15_9" value="2"></td>
                         </tr>
                         <tr>
-                            <td>10. Одышка</td>
+                            <td>10. Fiato corto</td>
                             <td><input type="radio" name="phq15_10" value="0"></td>
                             <td><input type="radio" name="phq15_10" value="1"></td>
                             <td><input type="radio" name="phq15_10" value="2"></td>
                         </tr>
                         <tr>
-                            <td>11. Боль или проблемы во время полового акта</td>
+                            <td>11. Dolore o problemi durante i rapporti sessuali</td>
                             <td><input type="radio" name="phq15_11" value="0"></td>
                             <td><input type="radio" name="phq15_11" value="1"></td>
                             <td><input type="radio" name="phq15_11" value="2"></td>
                         </tr>
                         <tr>
-                            <td>12. Запор, жидкий стул или диарея</td>
+                            <td>12. Stitichezza, feci molli o diarrea</td>
                             <td><input type="radio" name="phq15_12" value="0"></td>
                             <td><input type="radio" name="phq15_12" value="1"></td>
                             <td><input type="radio" name="phq15_12" value="2"></td>
                         </tr>
                         <tr>
-                            <td>13. Тошнота, метеоризм или расстройство желудка</td>
+                            <td>13. Nausea, gas o disturbi di stomaco</td>
                             <td><input type="radio" name="phq15_13" value="0"></td>
                             <td><input type="radio" name="phq15_13" value="1"></td>
                             <td><input type="radio" name="phq15_13" value="2"></td>
                         </tr>
                         <tr>
-                            <td>14. Чувство усталости или упадок сил</td>
+                            <td>14. Sentirsi stanco o avere poca energia</td>
                             <td><input type="radio" name="phq15_14" value="0"></td>
                             <td><input type="radio" name="phq15_14" value="1"></td>
                             <td><input type="radio" name="phq15_14" value="2"></td>
                         </tr>
                         <tr>
-                            <td>15. Трудности со сном</td>
+                            <td>15. Problemi di sonno</td>
                             <td><input type="radio" name="phq15_15" value="0"></td>
                             <td><input type="radio" name="phq15_15" value="1"></td>
                             <td><input type="radio" name="phq15_15" value="2"></td>
@@ -1846,25 +1846,25 @@
 
         
         <div id="section9" class="section">
-            <h2>9. Список функционального поведения полости рта (OBC)</h2>
-            <p><strong>Инструкция</strong>: Как часто Вы выполняли каждое из следующих действий в течение последнего месяца? Если частота действий различается, выберите наиболее высокий вариант. Пожалуйста, ответьте на каждый пункт, не пропуская ни одного.</p>
+            <h2>9. Elenco dei comportamenti funzionali orali (OBC)</h2>
+            <p><strong>Istruzione</strong>: Con quale frequenza ha eseguito ciascuna delle seguenti attività nell'ultimo mese? Se la frequenza delle attività varia, scelga l'opzione più alta. Si prega di rispondere a ciascuna voce, senza saltarne nessuna.</p>
             
-            <h3>Действия во время сна:</h3>
+            <h3>Attività durante il sonno:</h3>
             <div class="table-container">
                 <table class="obc-table">
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Никогда (0)</th>
-                            <th>&lt;1 ночь/месяц (1)</th>
-                            <th>1-3 ночи/месяц (2)</th>
-                            <th>1-3 ночи/неделя (3)</th>
-                            <th>4-7 ночей/неделя (4)</th>
+                            <th>Mai (0)</th>
+                            <th>&lt;1 notte/mese (1)</th>
+                            <th>1-3 notti/mese (2)</th>
+                            <th>1-3 notti/settimana (3)</th>
+                            <th>4-7 notti/settimana (4)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1. Стискивание или скрежетание зубами во время сна — в зависимости от Вашего дневного состояния (имеющаяся у Вас информация)</td>
+                            <td>1. Serrare o digrignare i denti durante il sonno - in base alle Sue condizioni diurne (informazioni a Sua disposizione)</td>
                             <td><input type="radio" name="obc_1" value="0"></td>
                             <td><input type="radio" name="obc_1" value="1"></td>
                             <td><input type="radio" name="obc_1" value="2"></td>
@@ -1872,7 +1872,7 @@
                             <td><input type="radio" name="obc_1" value="4"></td>
                         </tr>
                         <tr>
-                            <td>2. Сон в положении, оказывающим давление на нижнюю челюсть (например, на животе или на боку)</td>
+                            <td>2. Dormire in una posizione che esercita pressione sulla mandibola (ad esempio, sulla pancia o di lato)</td>
                             <td><input type="radio" name="obc_2" value="0"></td>
                             <td><input type="radio" name="obc_2" value="1"></td>
                             <td><input type="radio" name="obc_2" value="2"></td>
@@ -1883,22 +1883,22 @@
                 </table>
             </div>
             
-            <h3>Деятельность в часы бодрствования:</h3>
+            <h3>Attività durante le ore di veglia:</h3>
             <div class="table-container">
                 <table class="obc-table">
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Никогда (0)</th>
-                            <th>На короткое время (1)</th>
-                            <th>В течение некоторого времени (2)</th>
-                            <th>Большую часть времени (3)</th>
-                            <th>Все время (4)</th>
+                            <th>Mai (0)</th>
+                            <th>Per breve tempo (1)</th>
+                            <th>Per un certo tempo (2)</th>
+                            <th>Per la maggior parte del tempo (3)</th>
+                            <th>Tutto il tempo (4)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>3. Скрежетание зубами во время бодрствования</td>
+                            <td>3. Digrignare i denti durante la veglia</td>
                             <td><input type="radio" name="obc_3" value="0"></td>
                             <td><input type="radio" name="obc_3" value="1"></td>
                             <td><input type="radio" name="obc_3" value="2"></td>
@@ -1906,7 +1906,7 @@
                             <td><input type="radio" name="obc_3" value="4"></td>
                         </tr>
                         <tr>
-                            <td>4. Стискивание зубов во время бодрствования</td>
+                            <td>4. Serrare i denti durante la veglia</td>
                             <td><input type="radio" name="obc_4" value="0"></td>
                             <td><input type="radio" name="obc_4" value="1"></td>
                             <td><input type="radio" name="obc_4" value="2"></td>
@@ -1914,7 +1914,7 @@
                             <td><input type="radio" name="obc_4" value="4"></td>
                         </tr>
                         <tr>
-                            <td>5. Сжимание, соприкосновение зубов, удержание их вместе не во время жевания (т. е. наличие контакта между верхними и нижними зубами)</td>
+                            <td>5. Premere, toccare i denti, tenerli insieme quando non si mastica (cioè mantenere il contatto tra i denti superiori e inferiori)</td>
                             <td><input type="radio" name="obc_5" value="0"></td>
                             <td><input type="radio" name="obc_5" value="1"></td>
                             <td><input type="radio" name="obc_5" value="2"></td>
@@ -1922,7 +1922,7 @@
                             <td><input type="radio" name="obc_5" value="4"></td>
                         </tr>
                         <tr>
-                            <td>6. Удерживание мышц напряженными или жесткими, при этом не стискивая, и не сжимая зубы</td>
+                            <td>6. Tenere i muscoli tesi o rigidi, senza serrare o stringere i denti</td>
                             <td><input type="radio" name="obc_6" value="0"></td>
                             <td><input type="radio" name="obc_6" value="1"></td>
                             <td><input type="radio" name="obc_6" value="2"></td>
@@ -1930,7 +1930,7 @@
                             <td><input type="radio" name="obc_6" value="4"></td>
                         </tr>
                         <tr>
-                            <td>7. Удерживание или выдвижение нижней челюсти вперед или в сторону</td>
+                            <td>7. Tenere o spingere la mandibola in avanti o di lato</td>
                             <td><input type="radio" name="obc_7" value="0"></td>
                             <td><input type="radio" name="obc_7" value="1"></td>
                             <td><input type="radio" name="obc_7" value="2"></td>
@@ -1938,7 +1938,7 @@
                             <td><input type="radio" name="obc_7" value="4"></td>
                         </tr>
                         <tr>
-                            <td>8. Сильное прижимание языка к зубам</td>
+                            <td>8. Premere con forza la lingua contro i denti</td>
                             <td><input type="radio" name="obc_8" value="0"></td>
                             <td><input type="radio" name="obc_8" value="1"></td>
                             <td><input type="radio" name="obc_8" value="2"></td>
@@ -1946,7 +1946,7 @@
                             <td><input type="radio" name="obc_8" value="4"></td>
                         </tr>
                         <tr>
-                            <td>9. Нахождение языка между зубами</td>
+                            <td>9. Posizionare la lingua tra i denti</td>
                             <td><input type="radio" name="obc_9" value="0"></td>
                             <td><input type="radio" name="obc_9" value="1"></td>
                             <td><input type="radio" name="obc_9" value="2"></td>
@@ -1954,7 +1954,7 @@
                             <td><input type="radio" name="obc_9" value="4"></td>
                         </tr>
                         <tr>
-                            <td>10. Кусание, жевание или игра с языком, щеками или губами</td>
+                            <td>10. Mordere, masticare o giocare con la lingua, le guance o le labbra</td>
                             <td><input type="radio" name="obc_10" value="0"></td>
                             <td><input type="radio" name="obc_10" value="1"></td>
                             <td><input type="radio" name="obc_10" value="2"></td>
@@ -1962,7 +1962,7 @@
                             <td><input type="radio" name="obc_10" value="4"></td>
                         </tr>
                         <tr>
-                            <td>11. Удерживание нижней челюсти в напряженном или жестком положении, как будто для ее поддержки или защиты</td>
+                            <td>11. Tenere la mandibola in una posizione rigida o tesa, come per sostenerla o proteggerla</td>
                             <td><input type="radio" name="obc_11" value="0"></td>
                             <td><input type="radio" name="obc_11" value="1"></td>
                             <td><input type="radio" name="obc_11" value="2"></td>
@@ -1970,7 +1970,7 @@
                             <td><input type="radio" name="obc_11" value="4"></td>
                         </tr>
                         <tr>
-                            <td>12. Удерживание между зубами или кусание предметов, таких как волосы, трубка, карандаш, ручка, пальцы, ногти и т. д.</td>
+                            <td>12. Tenere tra i denti o mordere oggetti come capelli, pipa, matita, penna, dita, unghie, ecc.</td>
                             <td><input type="radio" name="obc_12" value="0"></td>
                             <td><input type="radio" name="obc_12" value="1"></td>
                             <td><input type="radio" name="obc_12" value="2"></td>
@@ -1978,7 +1978,7 @@
                             <td><input type="radio" name="obc_12" value="4"></td>
                         </tr>
                         <tr>
-                            <td>13. Использование жевательной резинки</td>
+                            <td>13. Usare gomma da masticare</td>
                             <td><input type="radio" name="obc_13" value="0"></td>
                             <td><input type="radio" name="obc_13" value="1"></td>
                             <td><input type="radio" name="obc_13" value="2"></td>
@@ -1986,7 +1986,7 @@
                             <td><input type="radio" name="obc_13" value="4"></td>
                         </tr>
                         <tr>
-                            <td>14. Игра на музыкальных инструментах, требующих использования рта или челюсти (например, деревянные духовые, медные духовые, струнные инструменты)</td>
+                            <td>14. Suonare strumenti musicali che richiedono l'uso della bocca o della mandibola (ad esempio, strumenti a fiato, archi)</td>
                             <td><input type="radio" name="obc_14" value="0"></td>
                             <td><input type="radio" name="obc_14" value="1"></td>
                             <td><input type="radio" name="obc_14" value="2"></td>
@@ -1994,7 +1994,7 @@
                             <td><input type="radio" name="obc_14" value="4"></td>
                         </tr>
                         <tr>
-                            <td>15. Удержание руки на челюсти в положении покоя, например, подперев подбородок ладонью</td>
+                            <td>15. Appoggiare la mano sulla mandibola in posizione di riposo, ad esempio sostenendo il mento con il palmo</td>
                             <td><input type="radio" name="obc_15" value="0"></td>
                             <td><input type="radio" name="obc_15" value="1"></td>
                             <td><input type="radio" name="obc_15" value="2"></td>
@@ -2002,7 +2002,7 @@
                             <td><input type="radio" name="obc_15" value="4"></td>
                         </tr>
                         <tr>
-                            <td>16. Пережевывание пищи только на одной стороне</td>
+                            <td>16. Masticare il cibo solo da un lato</td>
                             <td><input type="radio" name="obc_16" value="0"></td>
                             <td><input type="radio" name="obc_16" value="1"></td>
                             <td><input type="radio" name="obc_16" value="2"></td>
@@ -2010,7 +2010,7 @@
                             <td><input type="radio" name="obc_16" value="4"></td>
                         </tr>
                         <tr>
-                            <td>17. Прием пищи между основными приемами пищи (только продукты, требующие пережевывания)</td>
+                            <td>17. Mangiare tra i pasti principali (solo cibi che richiedono masticazione)</td>
                             <td><input type="radio" name="obc_17" value="0"></td>
                             <td><input type="radio" name="obc_17" value="1"></td>
                             <td><input type="radio" name="obc_17" value="2"></td>
@@ -2018,7 +2018,7 @@
                             <td><input type="radio" name="obc_17" value="4"></td>
                         </tr>
                         <tr>
-                            <td>18. Непрерывный разговор (например, обучение, продажи, обслуживание клиентов)</td>
+                            <td>18. Parlare continuamente (ad esempio, insegnamento, vendite, servizio clienti)</td>
                             <td><input type="radio" name="obc_18" value="0"></td>
                             <td><input type="radio" name="obc_18" value="1"></td>
                             <td><input type="radio" name="obc_18" value="2"></td>
@@ -2026,7 +2026,7 @@
                             <td><input type="radio" name="obc_18" value="4"></td>
                         </tr>
                         <tr>
-                            <td>19. Пение</td>
+                            <td>19. Cantare</td>
                             <td><input type="radio" name="obc_19" value="0"></td>
                             <td><input type="radio" name="obc_19" value="1"></td>
                             <td><input type="radio" name="obc_19" value="2"></td>
@@ -2034,7 +2034,7 @@
                             <td><input type="radio" name="obc_19" value="4"></td>
                         </tr>
                         <tr>
-                            <td>20. Зевота</td>
+                            <td>20. Sbadigliare</td>
                             <td><input type="radio" name="obc_20" value="0"></td>
                             <td><input type="radio" name="obc_20" value="1"></td>
                             <td><input type="radio" name="obc_20" value="2"></td>
@@ -2042,7 +2042,7 @@
                             <td><input type="radio" name="obc_20" value="4"></td>
                         </tr>
                         <tr>
-                            <td>21. Удерживание телефона между головой и плечами</td>
+                            <td>21. Tenere il telefono tra la testa e la spalla</td>
                             <td><input type="radio" name="obc_21" value="0"></td>
                             <td><input type="radio" name="obc_21" value="1"></td>
                             <td><input type="radio" name="obc_21" value="2"></td>
@@ -2054,76 +2054,75 @@
             </div>
         </div>
 
-        <button type="button" id="calculateBtn">Рассчитать результаты</button>
+        <button type="button" id="calculateBtn">Calcolare i risultati</button>
     </form>
 
     <div id="results" class="results">
-        <h2>Результаты оценки</h2>
+        <h2>Risultati della valutazione</h2>
         
         <div class="result-item">
-            <h3>1. Рисунок боли</h3>
-            <p>Количество болевых зон: <span id="painZonesResult"></span></p>
+            <h3>1. Disegno del dolore</h3>
+            <p>Numero di zone dolorose: <span id="painZonesResult"></span></p>
             <p class="interpretation" id="painZonesInterpretation"></p>
         </div>
         
         <div class="result-item">
-            <h3>2. Шкала хронической боли (GCPS версия 2.0)</h3>
-            <p>Характеристика интенсивности боли (CPI): <span id="cpiResult"></span>/100</p>
-            <p>Баллы за дни нетрудоспособности: <span id="disabilityDaysPointsResult"></span>/3</p>
-            <p>Баллы за интерференцию: <span id="interferencePointsResult"></span>/3</p>
-            <p>Общий балл нетрудоспособности: <span id="totalDisabilityPointsResult"></span>/6</p>
-            <p>Степень хронической боли: <span id="chronicPainGradeResult"></span></p>
+            <h3>2. Scala del dolore cronico (GCPS versione 2.0)</h3>
+            <p>Caratteristica dell'intensità del dolore (CPI): <span id="cpiResult"></span>/100</p>
+            <p>Punteggio per giorni di disabilità: <span id="disabilityDaysPointsResult"></span>/3</p>
+            <p>Punteggio per interferenza: <span id="interferencePointsResult"></span>/3</p>
+            <p>Punteggio totale di disabilità: <span id="totalDisabilityPointsResult"></span>/6</p>
+            <p>Grado di dolore cronico: <span id="chronicPainGradeResult"></span></p>
             <p class="interpretation" id="gcpsInterpretation"></p>
         </div>
         
         <div class="result-item">
-            <h3>3. Шкала ограничения функции нижней челюсти-8 (JFLS-8)</h3>
-            <p>Общий балл: <span id="jfls8Result"></span>/10</p>
+            <h3>3. Scala di limitazione funzionale mandibolare-8 (JFLS-8)</h3>
+            <p>Punteggio totale: <span id="jfls8Result"></span>/10</p>
             <p class="interpretation" id="jfls8Interpretation"></p>
         </div>
         
         <div class="result-item">
-            <h3>4. Шкала ограничения функции нижней челюсти-20 (JFLS-20)</h3>
-            <p>Жевание: <span id="jfls20ChewingResult"></span>/10</p>
-            <p>Мобильность: <span id="jfls20MobilityResult"></span>/10</p>
-            <p>Вербальное и эмоциональное общение: <span id="jfls20CommunicationResult"></span>/10</p>
-            <p>Глобальная (общая) оценка: <span id="jfls20GlobalResult"></span>/10</p>
-            <p>Эквивалент JFLS-8: <span id="jfls20Equivalent8Result"></span>/10</p>
+            <h3>4. Scala di limitazione funzionale mandibolare-20 (JFLS-20)</h3>
+            <p>Masticazione: <span id="jfls20ChewingResult"></span>/10</p>
+            <p>Mobilità: <span id="jfls20MobilityResult"></span>/10</p>
+            <p>Comunicazione verbale ed emotiva: <span id="jfls20CommunicationResult"></span>/10</p>
+            <p>Valutazione globale (generale): <span id="jfls20GlobalResult"></span>/10</p>
+            <p>Equivalente JFLS-8: <span id="jfls20Equivalent8Result"></span>/10</p>
             <p class="interpretation" id="jfls20Interpretation"></p>
         </div>
         
         <div class="result-item">
-            <h3>5. Анкета здоровья пациента (PHQ-4)</h3>
-            <p>Общий балл: <span id="phq4Result"></span>/12</p>
+            <h3>5. Questionario sulla salute del paziente (PHQ-4)</h3>
+            <p>Punteggio totale: <span id="phq4Result"></span>/12</p>
             <p class="interpretation" id="phq4Interpretation"></p>
         </div>
         
         <div class="result-item">
-            <h3>6. Анкета здоровья пациента (PHQ-9)</h3>
-            <p>Общий балл: <span id="phq9Result"></span>/27</p>
+            <h3>6. Questionario sulla salute del paziente (PHQ-9)</h3>
+            <p>Punteggio totale: <span id="phq9Result"></span>/27</p>
             <p class="interpretation" id="phq9Interpretation"></p>
         </div>
         
         <div class="result-item">
-            <h3>7. ГАД-7 (Генерализованное тревожное расстройство)</h3>
-            <p>Общий балл: <span id="gad7Result"></span>/21</p>
+            <h3>7. GAD-7 (Disturbo d'ansia generalizzato)</h3>
+            <p>Punteggio totale: <span id="gad7Result"></span>/21</p>
             <p class="interpretation" id="gad7Interpretation"></p>
         </div>
         
         <div class="result-item">
-            <h3>8. Опросник здоровья пациента – физические симптомы (PHQ-15)</h3>
-            <p>Общий балл: <span id="phq15Result"></span>/30</p>
+            <h3>8. Questionario sulla salute del paziente - sintomi fisici (PHQ-15)</h3>
+            <p>Punteggio totale: <span id="phq15Result"></span>/30</p>
             <p class="interpretation" id="phq15Interpretation"></p>
         </div>
         
         <div class="result-item">
-            <h3>9. Список функционального поведения полости рта (OBC)</h3>
-            <p>Метод 1 (количество элементов с ненулевым ответом): <span id="obcMethod1Result"></span>/21</p>
-            <p>Метод 2 (суммарный балл): <span id="obcMethod2Result"></span>/84</p>
+            <h3>9. Elenco dei comportamenti funzionali orali (OBC)</h3>
+            <p>Metodo 1 (numero di elementi con risposta non zero): <span id="obcMethod1Result"></span>/21</p>
+            <p>Metodo 2 (punteggio totale): <span id="obcMethod2Result"></span>/84</p>
             <p class="interpretation" id="obcInterpretation"></p>
         </div>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const calculateBtn = document.getElementById('calculateBtn');
@@ -2136,9 +2135,9 @@
                 
                 let painZonesInterpretation = '';
                 if (painZones === 0) {
-                    painZonesInterpretation = 'Нет болевых зон';
+                    painZonesInterpretation = 'Nessuna zona di dolore';
                 } else if (painZones >= 1) {
-                    painZonesInterpretation = 'Каждый участок тела, отмеченный болью, увеличивает риск развития другого болевого расстройства, а также хронической боли';
+                    painZonesInterpretation = 'Ogni area del corpo contrassegnata dal dolore aumenta il rischio di sviluppare un altro disturbo doloroso, nonché dolore cronico';
                 }
                 document.getElementById('painZonesInterpretation').textContent = painZonesInterpretation;
                 
@@ -2149,8 +2148,8 @@
                 
                 // Проверяем, выбраны ли все необходимые значения
                 if (!currentPainEl || !worstPainEl || !averagePainEl) {
-                    document.getElementById('cpiResult').textContent = "Не все поля заполнены";
-                    document.getElementById('gcpsInterpretation').textContent = "Невозможно рассчитать CPI - не все поля заполнены";
+                    document.getElementById('cpiResult').textContent = "Non tutti i campi sono compilati";
+                    document.getElementById('gcpsInterpretation').textContent = "Impossibile calcolare CPI - non tutti i campi sono compilati";
                 } else {
                     const currentPain = parseInt(currentPainEl.value);
                     const worstPain = parseInt(worstPainEl.value);
@@ -2182,7 +2181,7 @@
                     const workInterferenceEl = document.querySelector('input[name="workInterference"]:checked');
                     
                     if (!dailyInterferenceEl || !socialInterferenceEl || !workInterferenceEl) {
-                        document.getElementById('interferencePointsResult').textContent = "Не все поля заполнены";
+                        document.getElementById('interferencePointsResult').textContent = "Non tutti i campi sono compilati";
                     } else {
                         const dailyInterference = parseInt(dailyInterferenceEl.value);
                         const socialInterference = parseInt(socialInterferenceEl.value);
@@ -2213,19 +2212,19 @@
                         
                         if (cpi === 0) {
                             chronicPainGrade = '0';
-                            gcpsInterpretation = 'Нет боли';
+                            gcpsInterpretation = 'Nessun dolore';
                         } else if (cpi < 50 && totalDisabilityPoints < 3) {
                             chronicPainGrade = 'I';
-                            gcpsInterpretation = 'Боль низкой интенсивности, без инвалидности';
+                            gcpsInterpretation = 'Dolore a bassa intensità, senza disabilità';
                         } else if (cpi >= 50 && totalDisabilityPoints < 3) {
                             chronicPainGrade = 'II';
-                            gcpsInterpretation = 'Боль высокой интенсивности, без инвалидности';
+                            gcpsInterpretation = 'Dolore ad alta intensità, senza disabilità';
                         } else if (totalDisabilityPoints >= 3 && totalDisabilityPoints <= 4) {
                             chronicPainGrade = 'III';
-                            gcpsInterpretation = 'Умеренно ограничивающая боль';
+                            gcpsInterpretation = 'Dolore moderatamente limitante';
                         } else if (totalDisabilityPoints >= 5) {
                             chronicPainGrade = 'IV';
-                            gcpsInterpretation = 'Строго ограничивающая боль';
+                            gcpsInterpretation = 'Dolore severamente limitante';
                         }
                         
                         document.getElementById('chronicPainGradeResult').textContent = chronicPainGrade;
@@ -2248,7 +2247,7 @@
                 
                 // Проверяем, что пропущено не более 2 элементов
                 if (jfls8MissingCount > 2) {
-                    document.getElementById('jfls8Result').textContent = "Пропущено более 2 элементов";
+                    document.getElementById('jfls8Result').textContent = "Più di 2 elementi mancanti";
                     document.getElementById('jfls8Interpretation').textContent = "";
                 } else {
                     const jfls8Sum = jfls8Values.reduce((acc, val) => acc + val, 0);
@@ -2258,9 +2257,9 @@
                     // Интерпретация JFLS-8
                     let jfls8Interpretation = '';
                     if (jfls8Score < 0.16) {
-                        jfls8Interpretation = 'Нормальное функционирование челюсти (значение для людей без ВНЧС: 0.16)';
+                        jfls8Interpretation = 'Funzionamento normale della mandibola (valore per persone senza TMD: 0.16)';
                     } else {
-                        jfls8Interpretation = 'Ограничение функции челюсти (значение для людей с хроническим ВНЧС: 1.74)';
+                        jfls8Interpretation = 'Limitazione della funzione mandibolare (valore per persone con TMD cronico: 1.74)';
                     }
                     document.getElementById('jfls8Interpretation').textContent = jfls8Interpretation;
                 }
@@ -2281,7 +2280,7 @@
                 
                 // Проверяем, что пропущено не более 2 элементов
                 if (jfls20ChewingMissingCount > 2) {
-                    document.getElementById('jfls20ChewingResult').textContent = "Пропущено более 2 элементов";
+                    document.getElementById('jfls20ChewingResult').textContent = "Più di 2 elementi mancanti";
                 } else {
                     const jfls20ChewingSum = jfls20ChewingValues.reduce((acc, val) => acc + val, 0);
                     const jfls20ChewingScore = Math.round((jfls20ChewingSum / (6 - jfls20ChewingMissingCount)) * 10) / 10;
@@ -2303,7 +2302,7 @@
                 
                 // Проверяем, что пропущено не более 1 элемента
                 if (jfls20MobilityMissingCount > 1) {
-                    document.getElementById('jfls20MobilityResult').textContent = "Пропущено более 1 элемента";
+                    document.getElementById('jfls20MobilityResult').textContent = "Più di 1 elemento mancante";
                 } else {
                     const jfls20MobilitySum = jfls20MobilityValues.reduce((acc, val) => acc + val, 0);
                     const jfls20MobilityScore = Math.round((jfls20MobilitySum / (4 - jfls20MobilityMissingCount)) * 10) / 10;
@@ -2325,7 +2324,7 @@
                 
                 // Проверяем, что пропущено не более 2 элементов
                 if (jfls20CommunicationMissingCount > 2) {
-                    document.getElementById('jfls20CommunicationResult').textContent = "Пропущено более 2 элементов";
+                    document.getElementById('jfls20CommunicationResult').textContent = "Più di 2 elementi mancanti";
                 } else {
                     const jfls20CommunicationSum = jfls20CommunicationValues.reduce((acc, val) => acc + val, 0);
                     const jfls20CommunicationScore = Math.round((jfls20CommunicationSum / (8 - jfls20CommunicationMissingCount)) * 10) / 10;
@@ -2333,9 +2332,9 @@
                 }
                 
                 // Глобальная (общая) оценка
-                if (document.getElementById('jfls20ChewingResult').textContent !== "Пропущено более 2 элементов" &&
-                    document.getElementById('jfls20MobilityResult').textContent !== "Пропущено более 1 элемента" &&
-                    document.getElementById('jfls20CommunicationResult').textContent !== "Пропущено более 2 элементов") {
+                if (document.getElementById('jfls20ChewingResult').textContent !== "Più di 2 elementi mancanti" &&
+                    document.getElementById('jfls20MobilityResult').textContent !== "Più di 1 elemento mancante" &&
+                    document.getElementById('jfls20CommunicationResult').textContent !== "Più di 2 elementi mancanti") {
                     
                     const jfls20ChewingScore = parseFloat(document.getElementById('jfls20ChewingResult').textContent);
                     const jfls20MobilityScore = parseFloat(document.getElementById('jfls20MobilityResult').textContent);
@@ -2347,13 +2346,13 @@
                     // Интерпретация JFLS-20
                     let jfls20Interpretation = '';
                     if (jfls20GlobalScore < 0.16) {
-                        jfls20Interpretation = 'Нормальное функционирование челюсти (значение для людей без ВНЧС: 0.16)';
+                        jfls20Interpretation = 'Funzionamento normale della mandibola (valore per persone senza TMD: 0.16)';
                     } else {
-                        jfls20Interpretation = 'Ограничение функции челюсти (значение для людей с хроническим ВНЧС: 1.74)';
+                        jfls20Interpretation = 'Limitazione della funzione mandibolare (valore per persone con TMD cronico: 1.74)';
                     }
                     document.getElementById('jfls20Interpretation').textContent = jfls20Interpretation;
                 } else {
-                    document.getElementById('jfls20GlobalResult').textContent = "Невозможно рассчитать";
+                    document.getElementById('jfls20GlobalResult').textContent = "Impossibile calcolare";
                     document.getElementById('jfls20Interpretation').textContent = "";
                 }
                 
@@ -2374,7 +2373,7 @@
                 
                 // Проверяем, что пропущено не более 2 элементов
                 if (jfls20Equivalent8MissingCount > 2) {
-                    document.getElementById('jfls20Equivalent8Result').textContent = "Пропущено более 2 элементов";
+                    document.getElementById('jfls20Equivalent8Result').textContent = "Più di 2 elementi mancanti";
                 } else {
                     const jfls20Equivalent8Sum = jfls20Equivalent8Values.reduce((acc, val) => acc + val, 0);
                     const jfls20Equivalent8Score = Math.round((jfls20Equivalent8Sum / (8 - jfls20Equivalent8MissingCount)) * 10) / 10;
@@ -2396,7 +2395,7 @@
                 
                 // Проверяем, что пропущено не более 1 элемента
                 if (phq4MissingCount > 1) {
-                    document.getElementById('phq4Result').textContent = "Пропущено более 1 элемента";
+                    document.getElementById('phq4Result').textContent = "Più di 1 elemento mancante";
                     document.getElementById('phq4Interpretation').textContent = "";
                 } else if (phq4MissingCount === 1) {
                     const phq4Sum = phq4Values.reduce((acc, val) => acc + val, 0);
@@ -2405,13 +2404,13 @@
                     
                     let phq4Interpretation = '';
                     if (phq4Score >= 0 && phq4Score <= 3) {
-                        phq4Interpretation = 'Нет дистресса';
+                        phq4Interpretation = 'Nessun distress';
                     } else if (phq4Score >= 4 && phq4Score <= 5) {
-                        phq4Interpretation = 'Легкий дистресс';
+                        phq4Interpretation = 'Distress lieve';
                     } else if (phq4Score >= 6 && phq4Score <= 8) {
-                        phq4Interpretation = 'Умеренный дистресс';
+                        phq4Interpretation = 'Distress moderato';
                     } else {
-                        phq4Interpretation = 'Сильный дистресс';
+                        phq4Interpretation = 'Distress severo';
                     }
                     document.getElementById('phq4Interpretation').textContent = phq4Interpretation;
                 } else {
@@ -2420,13 +2419,13 @@
                     
                     let phq4Interpretation = '';
                     if (phq4Sum >= 0 && phq4Sum <= 3) {
-                        phq4Interpretation = 'Нет дистресса';
+                        phq4Interpretation = 'Nessun distress';
                     } else if (phq4Sum >= 4 && phq4Sum <= 5) {
-                        phq4Interpretation = 'Легкий дистресс';
+                        phq4Interpretation = 'Distress lieve';
                     } else if (phq4Sum >= 6 && phq4Sum <= 8) {
-                        phq4Interpretation = 'Умеренный дистресс';
+                        phq4Interpretation = 'Distress moderato';
                     } else {
-                        phq4Interpretation = 'Сильный дистресс';
+                        phq4Interpretation = 'Distress severo';
                     }
                     document.getElementById('phq4Interpretation').textContent = phq4Interpretation;
                 }
@@ -2446,7 +2445,7 @@
                 
                 // Проверяем, что пропущено не более 3 элементов
                 if (phq9MissingCount > 3) {
-                    document.getElementById('phq9Result').textContent = "Пропущено более 3 элементов";
+                    document.getElementById('phq9Result').textContent = "Più di 3 elementi mancanti";
                     document.getElementById('phq9Interpretation').textContent = "";
                 } else if (phq9MissingCount > 0) {
                     const phq9Sum = phq9Values.reduce((acc, val) => acc + val, 0);
@@ -2455,15 +2454,15 @@
                     
                     let phq9Interpretation = '';
                     if (phq9Score >= 0 && phq9Score <= 5) {
-                        phq9Interpretation = 'Нет депрессии';
+                        phq9Interpretation = 'Nessuna depressione';
                     } else if (phq9Score >= 6 && phq9Score <= 10) {
-                        phq9Interpretation = 'Легкая депрессия';
+                        phq9Interpretation = 'Depressione lieve';
                     } else if (phq9Score >= 11 && phq9Score <= 15) {
-                        phq9Interpretation = 'Умеренная депрессия';
+                        phq9Interpretation = 'Depressione moderata';
                     } else if (phq9Score >= 16 && phq9Score <= 20) {
-                        phq9Interpretation = 'Умеренно-тяжелая депрессия';
+                        phq9Interpretation = 'Depressione moderatamente grave';
                     } else {
-                        phq9Interpretation = 'Тяжелая депрессия';
+                        phq9Interpretation = 'Depressione grave';
                     }
                     document.getElementById('phq9Interpretation').textContent = phq9Interpretation;
                 } else {
@@ -2472,15 +2471,15 @@
                     
                     let phq9Interpretation = '';
                     if (phq9Sum >= 0 && phq9Sum <= 5) {
-                        phq9Interpretation = 'Нет депрессии';
+                        phq9Interpretation = 'Nessuna depressione';
                     } else if (phq9Sum >= 6 && phq9Sum <= 10) {
-                        phq9Interpretation = 'Легкая депрессия';
+                        phq9Interpretation = 'Depressione lieve';
                     } else if (phq9Sum >= 11 && phq9Sum <= 15) {
-                        phq9Interpretation = 'Умеренная депрессия';
+                        phq9Interpretation = 'Depressione moderata';
                     } else if (phq9Sum >= 16 && phq9Sum <= 20) {
-                        phq9Interpretation = 'Умеренно-тяжелая депрессия';
+                        phq9Interpretation = 'Depressione moderatamente grave';
                     } else {
-                        phq9Interpretation = 'Тяжелая депрессия';
+                        phq9Interpretation = 'Depressione grave';
                     }
                     document.getElementById('phq9Interpretation').textContent = phq9Interpretation;
                 }
@@ -2500,7 +2499,7 @@
                 
                 // Проверяем, что пропущено не более 2 элементов
                 if (gad7MissingCount > 2) {
-                    document.getElementById('gad7Result').textContent = "Пропущено более 2 элементов";
+                    document.getElementById('gad7Result').textContent = "Più di 2 elementi mancanti";
                     document.getElementById('gad7Interpretation').textContent = "";
                 } else if (gad7MissingCount > 0) {
                     const gad7Sum = gad7Values.reduce((acc, val) => acc + val, 0);
@@ -2509,13 +2508,13 @@
                     
                     let gad7Interpretation = '';
                     if (gad7Score >= 0 && gad7Score <= 5) {
-                        gad7Interpretation = 'Нет тревоги';
+                        gad7Interpretation = 'Nessuna ansia';
                     } else if (gad7Score >= 6 && gad7Score <= 10) {
-                        gad7Interpretation = 'Легкая тревожность';
+                        gad7Interpretation = 'Ansia lieve';
                     } else if (gad7Score >= 11 && gad7Score <= 15) {
-                        gad7Interpretation = 'Умеренная тревожность';
+                        gad7Interpretation = 'Ansia moderata';
                     } else {
-                        gad7Interpretation = 'Сильная тревога';
+                        gad7Interpretation = 'Ansia grave';
                     }
                     document.getElementById('gad7Interpretation').textContent = gad7Interpretation;
                 } else {
@@ -2524,13 +2523,13 @@
                     
                     let gad7Interpretation = '';
                     if (gad7Sum >= 0 && gad7Sum <= 5) {
-                        gad7Interpretation = 'Нет тревоги';
+                        gad7Interpretation = 'Nessuna ansia';
                     } else if (gad7Sum >= 6 && gad7Sum <= 10) {
-                        gad7Interpretation = 'Легкая тревожность';
+                        gad7Interpretation = 'Ansia lieve';
                     } else if (gad7Sum >= 11 && gad7Sum <= 15) {
-                        gad7Interpretation = 'Умеренная тревожность';
+                        gad7Interpretation = 'Ansia moderata';
                     } else {
-                        gad7Interpretation = 'Сильная тревога';
+                        gad7Interpretation = 'Ansia grave';
                     }
                     document.getElementById('gad7Interpretation').textContent = gad7Interpretation;
                 }
@@ -2550,7 +2549,7 @@
                 
                 // Проверяем, что пропущено не более 5 элементов
                 if (phq15MissingCount > 5) {
-                    document.getElementById('phq15Result').textContent = "Пропущено более 5 элементов";
+                    document.getElementById('phq15Result').textContent = "Più di 5 elementi mancanti";
                     document.getElementById('phq15Interpretation').textContent = "";
                 } else if (phq15MissingCount > 0) {
                     const phq15Sum = phq15Values.reduce((acc, val) => acc + val, 0);
@@ -2559,13 +2558,13 @@
                     
                     let phq15Interpretation = '';
                     if (phq15Score >= 0 && phq15Score <= 4) {
-                        phq15Interpretation = 'Минимальная тяжесть симптомов';
+                        phq15Interpretation = 'Gravità minima dei sintomi';
                     } else if (phq15Score >= 5 && phq15Score <= 10) {
-                        phq15Interpretation = 'Низкая тяжесть симптомов';
+                        phq15Interpretation = 'Bassa gravità dei sintomi';
                     } else if (phq15Score >= 11 && phq15Score <= 14) {
-                        phq15Interpretation = 'Средняя тяжесть симптомов';
+                        phq15Interpretation = 'Media gravità dei sintomi';
                     } else {
-                        phq15Interpretation = 'Высокая тяжесть симптомов';
+                        phq15Interpretation = 'Alta gravità dei sintomi';
                     }
                     document.getElementById('phq15Interpretation').textContent = phq15Interpretation;
                 } else {
@@ -2574,13 +2573,13 @@
                     
                     let phq15Interpretation = '';
                     if (phq15Sum >= 0 && phq15Sum <= 4) {
-                        phq15Interpretation = 'Минимальная тяжесть симптомов';
+                        phq15Interpretation = 'Gravità minima dei sintomi';
                     } else if (phq15Sum >= 5 && phq15Sum <= 10) {
-                        phq15Interpretation = 'Низкая тяжесть симптомов';
+                        phq15Interpretation = 'Bassa gravità dei sintomi';
                     } else if (phq15Sum >= 11 && phq15Sum <= 14) {
-                        phq15Interpretation = 'Средняя тяжесть симптомов';
+                        phq15Interpretation = 'Media gravità dei sintomi';
                     } else {
-                        phq15Interpretation = 'Высокая тяжесть симптомов';
+                        phq15Interpretation = 'Alta gravità dei sintomi';
                     }
                     document.getElementById('phq15Interpretation').textContent = phq15Interpretation;
                 }
@@ -2609,13 +2608,13 @@
                 
                 let obcInterpretation = '';
                 if (obcSum === 0) {
-                    obcInterpretation = 'Нет парафункции';
+                    obcInterpretation = 'Nessuna parafunzione';
                 } else if (obcSum >= 1 && obcSum <= 16) {
-                    obcInterpretation = 'Нормальное поведение';
+                    obcInterpretation = 'Comportamento normale';
                 } else if (obcSum >= 17 && obcSum <= 24) {
-                    obcInterpretation = 'Низкий уровень парафункции (встречается в два раза чаще у людей с ВНЧС)';
+                    obcInterpretation = 'Basso livello di parafunzione (si verifica due volte più spesso nelle persone con TMD)';
                 } else {
-                    obcInterpretation = 'Высокий уровень парафункции (встречается в 17 раз чаще у людей с ВНЧС)';
+                    obcInterpretation = 'Alto livello di parafunzione (si verifica 17 volte più spesso nelle persone con TMD)';
                 }
                 document.getElementById('obcInterpretation').textContent = obcInterpretation;
                 
@@ -2626,6 +2625,7 @@
                 document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
             }
         });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const canvas = document.getElementById('pain-canvas');
@@ -2772,4 +2772,3 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
 </body>
 </html>
-
