@@ -250,25 +250,19 @@
         
         <div id="section1" class="section">
             <h2>1. Рисунок боли</h2>
-            <p><strong>Инструкция</strong>: Укажите на рисунках локализацию ВСЕХ видов боли, закрасив соответствующие области. Если боль локализована в определённой точке, обозначьте её видимой точкой (•). Если боль мигрирует из одной области в другую, укажите её местоположение стрелками.</p>
+            <p><strong>Инструкция</strong>: Укажите на рисунках локализацию ВСЕХ видов боли, поставив точку в соответствующей области.</p>
             
         <div class="pain-drawing">
             <h3>Локализация боли</h3>
-            <p><strong>Инструкция:</strong> Укажите на рисунках локализацию ВСЕХ видов боли. Используйте кнопки ниже для выбора типа отметки.</p>
             
-            <div class="drawing-tools">
-                <button type="button" class="tool-btn active" id="point-tool">Точка боли</button>
-                <button type="button" class="tool-btn" id="arrow-tool">Мигрирующая боль (стрелка)</button>
-                <button type="button" class="tool-btn" id="clear-all">Очистить все</button>
-                <div class="color-picker">
-                    <label for="brush-color">Цвет:</label>
-                    <input type="color" id="brush-color" value="#ff0000">
-                </div>
-                <div class="brush-size">
-                    <label for="brush-size">Размер:</label>
-                    <input type="range" id="brush-size" min="1" max="20" value="5">
-                </div>
+        <div class="drawing-tools">
+            <button type="button" class="tool-btn active" id="point-tool">Точка боли</button>
+            <button type="button" class="tool-btn" id="clear-all">Очистить все</button>
+            <div class="brush-size">
+                <label for="brush-size">Размер:</label>
+                <input type="range" id="brush-size" min="1" max="20" value="5">
             </div>
+        </div>
             
             <div class="canvas-container">
                 <canvas id="pain-canvas" width="800" height="600"></canvas>
@@ -1002,7 +996,7 @@
             </div>
             
             <div class="question">
-                <p>7. Откройте достаточно широко, чтобы откусить целое яблоко</p>
+                <p>7. Откройте рот достаточно широко, чтобы откусить целое яблоко</p>
                 <div class="scale-labels">
                     <span>Никакого ограничения</span>
                     <span>Серьезное ограничение</span>
@@ -1037,7 +1031,7 @@
             
             
             <div class="question">
-                <p>8. Откройте достаточно широко, чтобы откусить кусочек сэндвича</p>
+                <p>8. Откройте рот достаточно широко, чтобы откусить кусочек сэндвича</p>
                 <div class="scale-labels">
                     <span>Никакого ограничения</span>
                     <span>Серьезное ограничение</span>
@@ -1071,7 +1065,7 @@
             </div>
             
             <div class="question">
-                <p>9. Откройте достаточно широко для разговора</p>
+                <p>9. Откройте рот достаточно широко для разговора</p>
                 <div class="scale-labels">
                     <span>Никакого ограничения</span>
                     <span>Серьезное ограничение</span>
@@ -2637,7 +2631,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const canvas = document.getElementById('pain-canvas');
     const ctx = canvas.getContext('2d');
     const pointToolBtn = document.getElementById('point-tool');
-    const arrowToolBtn = document.getElementById('arrow-tool');
     const clearAllBtn = document.getElementById('clear-all');
     const colorPicker = document.getElementById('brush-color');
     const brushSize = document.getElementById('brush-size');
@@ -2687,16 +2680,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 pointToolBtn.classList.add('active');
                 canvas.style.cursor = 'pointer';
                 break;
-            case 'arrow':
+            /* case 'arrow':
                 arrowToolBtn.classList.add('active');
                 canvas.style.cursor = 'crosshair';
-                break;
+                break; */
         }
     }
+
     
     // Обработчики нажатий на кнопки инструментов
     pointToolBtn.addEventListener('click', () => setActiveTool('point'));
-    arrowToolBtn.addEventListener('click', () => setActiveTool('arrow'));
     
     clearAllBtn.addEventListener('click', () => {
         // Очищаем canvas и перерисовываем фоновое изображение
@@ -2723,30 +2716,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function drawPoint(x, y) {
         ctx.beginPath();
         ctx.arc(x, y, parseInt(brushSize.value), 0, Math.PI * 2);
-        ctx.fillStyle = colorPicker.value;
-        ctx.fill();
-    }
-    
-    // Рисование стрелки
-    function drawArrow(fromX, fromY, toX, toY) {
-        // Рисуем линию
-        ctx.beginPath();
-        ctx.moveTo(fromX, fromY);
-        ctx.lineTo(toX, toY);
-        ctx.strokeStyle = colorPicker.value;
-        ctx.lineWidth = parseInt(brushSize.value);
-        ctx.stroke();
-        
-        // Рисуем наконечник стрелки
-        const headlen = 15; // длина наконечника стрелки
-        const angle = Math.atan2(toY - fromY, toX - fromX);
-        
-        ctx.beginPath();
-        ctx.moveTo(toX, toY);
-        ctx.lineTo(toX - headlen * Math.cos(angle - Math.PI/6), toY - headlen * Math.sin(angle - Math.PI/6));
-        ctx.lineTo(toX - headlen * Math.cos(angle + Math.PI/6), toY - headlen * Math.sin(angle + Math.PI/6));
-        ctx.closePath();
-        ctx.fillStyle = colorPicker.value;
+        ctx.fillStyle = "#ff0000"; // Заменили colorPicker.value на "#ff0000"
         ctx.fill();
     }
     
@@ -2762,10 +2732,11 @@ document.addEventListener('DOMContentLoaded', function() {
             markCount++;
             painZonesInput.value = markCount;
             saveCanvasState();
-        } else if (currentTool === 'arrow') {
+        }
+        /* else if (currentTool === 'arrow') {
             arrowStartX = coords.x;
             arrowStartY = coords.y;
-        }
+        } */
     });
     
     // Обработчик движения мыши
@@ -2779,11 +2750,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const coords = getCanvasCoordinates(event);
         
-        if (currentTool === 'arrow') {
+        /* if (currentTool === 'arrow') {
             drawArrow(arrowStartX, arrowStartY, coords.x, coords.y);
             markCount++;
             painZonesInput.value = markCount;
-        }
+        } */
         
         isDrawing = false;
         saveCanvasState();
@@ -2801,3 +2772,4 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
 </body>
 </html>
+
